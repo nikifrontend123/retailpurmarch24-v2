@@ -1,21 +1,68 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import catalogRoutes from './catalog'
+import faqsRoutes from './faq'
+import profileSteps from './profileSteps'
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "market",
+    component: () => import("../views/MarketPage.vue"),
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/shop/:voteId",
+    name: "shop",
+    component: () => import("@/components/market/ShopPage.vue")
+
   },
+  {
+    path: "/post",
+    name: "post",
+    component: () => import("../views/PostPage.vue"),
+  },
+  {
+    path: "/order",
+    name: "order",
+    component: () => import("../views/OrderPage.vue"),
+  },
+  {
+    path: "/orderDetail/:orderId",
+    name: "orderDetail",
+    component: () => import("@/components/order/OrderDetail.vue")
+  },
+  {
+    path: "/wishlist",
+    name: "wishlist",
+    component: () => import("../views/WishlistCatalogs.vue"),
+  },
+  {
+    path: "/allsupporters",
+    name: "AllSupporters",
+    component: () => import("@/views/AllSupporters.vue")
+  },
+  {
+    path: "/review",
+    name: "review",
+    component: () => import("@/views/ReviewComp.vue")
+  },
+  {
+    path: "/aboutUs",
+    name: "aboutUs",
+    component: () => import('@/components/faqs/AboutUs.vue')
+  },
+  {
+    path: '/customer-service',
+    name: 'CustomerService',
+    component: () => import('@/components/faqs/CustomerService.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('@/views/ProfilePage.vue')
+  },
+  ...catalogRoutes,
+  ...faqsRoutes,
+  ...profileSteps
 ];
 
 const router = createRouter({
