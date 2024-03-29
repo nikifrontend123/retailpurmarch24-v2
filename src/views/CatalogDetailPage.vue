@@ -67,9 +67,7 @@
                 </div>
               </div>
             </div>
-            <PremiumTable></PremiumTable>
 
-            <OrdinaryTable></OrdinaryTable>
             <div class="mb-3 mt-3">
               <h5 class="">MOQ - {{ product.moq }} pcs</h5>
               <p class="m-0 fw-light">(You will get all trending Colors & Sizes)</p>
@@ -122,7 +120,7 @@
     <nav class="navbar navbar-light" style="z-index: 20 !important;">
       <div class="w-100 d-flex justify-content-between align-items-center position-fixed px-2"
         style="height: 63px; bottom: 0; background: #f6f6f6;">
-        <i class="bi bi-heart fs-2 px-3"></i>
+        <i @click="saveProductData" class="bi bi-heart fs-2 px-3"></i>
         <div>
           <div class="bg-white d-flex align-items-center p-2">
             <p class="fw-bold pe-2 mb-0">Qty:</p>
@@ -134,7 +132,7 @@
         <div class="w-50">
           <button @click="addToCart" class="top-brand btn w-100 d-flex justify-content-center align-items-center">
             <i class="bi bi-bag-check fs-2"></i>
-            <p class="text-center m-0 ms-2">Add to cart</p>
+            <p class="text-center m-0 ms-2">Cart</p>
           </button>
         </div>
 
@@ -144,9 +142,6 @@
 </template>
 
 <script>
-// import OrdinaryTable from '@/components/ProductTable/OrdinaryTable.vue';
-// import PremiumTable from '@/components/ProductTable/PremiumTable.vue';
-// import ProductTopnav from '@/components/navbar/ProductTopnav.vue';
 import FavCatalog from '@/mixins/FavCatalog.js'
 
 export default {
@@ -167,11 +162,6 @@ export default {
 
   },
 
-  components: {
-    // PremiumTable,
-    // OrdinaryTable,
-    // ProductTopnav,
-  },
   mounted() {
     this.selectedImage = this.product.images[0];
 
@@ -184,6 +174,10 @@ export default {
     }
   },
   methods: {
+    saveProductData() {
+      this.$store.dispatch('catalog/wishListProduct', this.product);
+    },
+
     increment() {
       this.quantity++;
     },
@@ -200,7 +194,7 @@ export default {
     },
     goBack() {
       window.history.back();
-    }
+    },
   }
 };
 </script>
@@ -222,7 +216,6 @@ export default {
 
   .main-img {
     width: 100%;
-    /* padding-right: 12px !important; */
     margin-right: 0.5rem !important;
   }
 }

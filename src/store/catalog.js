@@ -868,6 +868,7 @@ export default {
         ],
         activeProduct: {},
         savedProducts: [],
+        wishListProducts: [],
     },
     getters: {
         getCategories(state) {
@@ -883,6 +884,9 @@ export default {
         getSavedProducts(state) {
             return state.savedProducts;
           },
+        getWishListProducts(state) {
+            return state.wishListProducts;
+          },
     },
     mutations: {
         selectProduct(state, product) {
@@ -894,6 +898,12 @@ export default {
         unSaveProduct(state, productIndex) {
             state.savedProducts.splice(productIndex, 1)
         },
+        wishListProduct(state, data) {
+            state.wishListProducts.push(data)
+        },
+        unWishListProduct(state, productIndex) {
+            state.wishListProducts.splice(productIndex, 1)
+        },
     },
     actions: {
         selectProduct({ commit }, product) {
@@ -904,6 +914,12 @@ export default {
         },
         unSaveProduct({ commit }, productIndex) {
             commit('unSaveProduct', productIndex)
+        },
+        wishListProduct({ commit }, data) {
+            commit('wishListProduct', data)
+        },
+        unWishListProduct({ commit }, productIndex) {
+            commit('unWishListProduct', productIndex)
         },
     }
 }
