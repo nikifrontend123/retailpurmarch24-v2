@@ -1,43 +1,35 @@
 <template>
   <RetailpurTopNav></RetailpurTopNav>
   <div>
-    <div id="carouselExampleInterval" class="carousel slide row-cols-xl" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-          aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="2000">
-          <img src="img/banners/b1.png" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/banners/b2.png" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/banners/b3.png" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/banners/b4.png" class="d-block w-100" alt="..." />
+    <div class="border py-5"
+      style="background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); width: 100%;">
+      <div class="d-md-flex d-none justify-content-evenly align-items-center w-100 mt-5">
+        <!-- <img src="/img/girl.png" width="350"> -->
+        <div class="d-flex align-items-center">
+          <TextStyle></TextStyle>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="d-md-none d-flex flex-column justify-content-center align-items-center w-100">
+        <!-- <img src="/img/girl.png" width="250"> -->
+        <div class="d-flex align-items-center" style="font-size: 20px !important;">
+          <TextStyle></TextStyle>
+        </div>
+      </div>
+      <div class="w-100 mt-3 mb-5">
+        <div class="container d-md-flex d-block justify-content-between align-items-center">
+          <div class="my-1 rounded-0 btn btn-light border py-2 w-100 d-flex justify-content-between">
+            <div class='d-flex'>
+              <span class="fw-bold">Search by</span> &nbsp;
+              <span class="text-secondary">{{ searchText }}</span>
+            </div>
+            <i class="bi bi-search"></i>
+          </div>
+          <StateSelector></StateSelector>
+        </div>
+      </div>
     </div>
-    <p class="p-2 text-center mt-3 mb-0 bill madimi-one-regular">
+
+    <p class="p-2 text-center mt-3 mb-0 bill text-style">
       <span class="fs-5">~ CATAGORIES ~</span>
     </p>
     <div class="d-flex" style="overflow-x: scroll">
@@ -88,8 +80,8 @@
               </div>
             </div>
           </router-link>
-          <span class="gg madimi-one-regular position-absolute" style="top: 115px; left: -3px; font-size: 50px">{{
-        vote.id }}</span>
+          <span class="gg text-style position-absolute" style="top: 115px; left: -3px; font-size: 50px">{{
+                vote.id }}</span>
         </div>
       </div>
     </div>
@@ -166,14 +158,118 @@
               <p style="font-size: var(--x-small)">Promoters</p>
             </div>
           </div>
-          <span class="gg madimi-one-regular position-absolute" style="top: 115px; left: -3px; font-size: 50px">{{
-        vote.id }}</span>
+          <span class="gg text-style position-absolute" style="top: 115px; left: -3px; font-size: 50px">{{
+                vote.id }}</span>
         </div>
       </div>
     </div>
 
     <WebCollection></WebCollection>
     <HomePageCard></HomePageCard>
+
+    <div class="mt-4 w-100 py-3" style="background-color: #F6F7F9;">
+      <div class="text-center my-4">
+        <p class="fs-5"> Now you can Set-Up</p>
+
+        <p class="fs-3">Your Online Retail Shop Business in just 3 Easy Steps</p>
+      </div>
+      <FlipCard class="d-none d-md-block"></FlipCard>
+      <MobileFlipcard class="d-md-none"></MobileFlipcard>
+    </div>
+
+    <div class="mt-4 py-3 px-2">
+      <p class="text-center fs-3">How Do You earn ?</p>
+      <p class="fs-5 fw-bold text-center pb-5">No more up front inventory costs or shipping logistics.<br> With
+        Retailpur, products are
+        sent directly from manufacturers to your cutomers.</p>
+      <div class="m-2 fs-5">
+        <div class="text-center ">
+          <p class="m-0 fw-bold" style="color: #00B0F0;">Step 1</p>
+          <p>Your customer places an order from your eRetail Shop</p>
+        </div>
+        <div class="text-center ">
+          <p class="m-0 fw-bold" style="color: #00B0F0;">Step 2</p>
+          <p>Your eRetail Shop automatically sends the order to the concern manufacturer of the product order
+          </p>
+        </div>
+        <div class="text-center">
+          <p class="m-0 fw-bold " style="color: #00B0F0;">Step 3</p>
+          <p>the concern manufacturer starts preparation of the product ordered by your customer</p>
+        </div>
+        <div class="text-center">
+          <p class="m-0 fw-bold" style="color: #00B0F0;">Step 4</p>
+          <p>Manufacturer will ship the concern order directly to your customer within 3 days</p>
+        </div>
+        <div class="text-center">
+          <p class="m-0 fw-bold" style="color: #00B0F0;">Step 5</p>
+          <p>As soon as your customer accepts the product you will recieve your commission income</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="py-3" style="background-color: #F6F7F9;">
+      <div class="text-center fs-3 fw-bold">How Much Do You earn Approx. ?</div>
+      <div class="d-flex text-center fs-4 py-5">
+        <DigitComp class=""></DigitComp>
+      </div>
+    </div>
+
+    <div class="w-100 py-3 px-3">
+      <div class="text-center m-1">
+        <div class="fs-3 fw-bold">Our Platform is Power Pack of Features</div>
+        <p class="fs-5">with a quick & easy buying experience</p>
+      </div>
+      <div class="w-100">
+        <div class="w-100 fs-5 d-md-flex justify-content-between  px-3 text-center">
+          <div class="my-3 me-4 w-100 p-2  text-white bg-danger fw-bold">
+            <p class="m-0">Your Branding & Personalisation</p>
+          </div>
+          <div class="my-3 me-4 w-100 p-2  text-white bg-danger fw-bold">
+            <p class="m-0">Best Quality with Easy return policy</p>
+          </div>
+        </div>
+        <div class="boxes w-100  fs-5 d-md-flex justify-content-between  px-3 text-center ">
+          <div class="my-3 me-4 w-100 p-2  text-white bg-danger fw-bold">
+            <p class="m-0">Easy Browsing and Ordering</p>
+          </div>
+          <div class="my-3 me-4 w-100 p-2 d-md-block d-none text-white bg-danger fw-bold">
+            <p class="m-0" style="color: #F55050;"> </p>
+          </div>
+          <div class="my-3 me-4 w-100 p-2  text-white bg-danger fw-bold">
+            <p class="m-0">Online & COD Payment Options</p>
+          </div>
+        </div>
+        <div class="boxes w-100  fs-5 d-md-flex justify-content-between  px-3 text-center ">
+          <div class="my-3 me-4 w-100 p-2  text-white bg-danger fw-bold">
+            <p class="m-0">Hot Trending products at Lowest prices</p>
+          </div>
+          <div class="my-3 me-4 w-100 p-2  text-white bg-danger fw-bold">
+            <p class="m-0">Free & Fast Delivery all across the world</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fourteen mt-4 py-5 px-2" id="btnn">
+      <div class="container d-md-flex justify-content-center align-items-center">
+        <div class="left w-100">
+          <div class="fs-3">if you have a</div>
+          <h1 style=" font-size: 50px; letter-spacing: 10px;">Skill, Passion & Purpose</h1>
+        </div>
+        <div class="right w-100">
+          <img style="width: 100%;" src="img/retail/bulb.jpg" width="100" alt="">
+        </div>
+      </div>
+      <div class="txt text-center mt-4">
+        <span class="fs-3 ">Then Choose Us as your Growth Partner</span>
+      </div>
+      <div class="btnn d-flex justify-content-center mt-4">
+        <button data-bs-toggle="modal" href="#exampleModalToggle"
+          class="px-3 bg-white button text-danger fw-bold fs-3 border border-1 border-primary rounded-3">Click
+          here to Choose</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -181,16 +277,29 @@
 import WebCollection from "@/components/market/WebCollection.vue";
 import RetailpurTopNav from "@/components/navbar/RetailerpurTopNav.vue";
 import HomePageCard from "@/components/market/HomePageCard.vue";
+import FlipCard from "@/components/retailpur/FlipCard.vue";
+import MobileFlipcard from "@/components/retailpur/MobileFlipcard.vue"
+import DigitComp from "@/components/retailpur/DigitComp.vue";
+import TextStyle from "@/components/retailpur/TextStyle.vue";
+import StateSelector from "@/components/StateSelector.vue";
 export default {
   name: "HomeView",
   components: {
     // TopNav,
+    TextStyle,
     WebCollection,
     RetailpurTopNav,
     HomePageCard,
+    FlipCard,
+    MobileFlipcard,
+    DigitComp,
+    StateSelector
   },
   data() {
     return {
+      words: ['City', 'Clothing', 'Categories', 'Top Retailer'],
+      currentIndex: 0,
+      searchText: '',
       catagory: [
         {
           id: 1,
@@ -302,6 +411,7 @@ export default {
           support: 234,
         },
       ],
+
     };
   },
   computed: {
@@ -314,12 +424,28 @@ export default {
       }
     },
   },
+  mounted() {
+    this.rotateWords();
+
+  },
+  methods: {
+    rotateWords() {
+      setTimeout(() => {
+        this.searchText = this.words[this.currentIndex];
+        this.currentIndex++;
+        if (this.currentIndex >= this.words.length) {
+          this.currentIndex = 0;
+        }
+        this.rotateWords();
+      }, 1000);
+    },
+  }
 };
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
 
-.madimi-one-regular {
+.text-style {
   font-family: "Madimi One", sans-serif;
   font-weight: 400;
   font-style: normal;

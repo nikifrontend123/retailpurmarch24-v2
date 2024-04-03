@@ -47,7 +47,7 @@
         </div>
         <div class="text-center py-3 d-flex align-items-center justify-content-center"
             style="background-color: var(--primary-color);">
-            <p style="color: var(--secondary-color);" class=" mb-0"> Copyright © 2024 machiddle.in All rights reserved</p>
+            <p style="color: var(--secondary-color);" class=" mb-0"> Copyright © 2024 HanumantFashion.in All rights reserved</p>
         </div>
     </div>
 </template>

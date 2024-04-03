@@ -60,6 +60,11 @@ const routes = [
     name: 'profile',
     component: () => import('@/views/ProfilePage.vue')
   },
+  {
+    path: "/AllMArket",
+    name: "allmarket",
+    component: () => import("@/components/market/shop/AllMarket.vue")
+  },
   ...catalogRoutes,
   ...faqsRoutes,
   ...profileSteps

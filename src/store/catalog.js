@@ -1,47 +1,47 @@
 export default {
     namespaced: true,
     state: {
-        categories:[
+        categories: [
             {
-                id:1,
-                img:'https://static2.urbanic.com/images/feeds/1673850897789/tops.png',
-                name:'Tops',
+                id: 1,
+                img: 'https://static2.urbanic.com/images/feeds/1673850897789/tops.png',
+                name: 'Tops',
                 route: '/catalogs/category1',
             },
             {
-                id:2,
-                img:'https://static2.urbanic.com/images/feeds/1673850888214/T.png',
-                name:'T-Shirts',
+                id: 2,
+                img: 'https://static2.urbanic.com/images/feeds/1673850888214/T.png',
+                name: 'T-Shirts',
                 route: '/catalogs/category2',
             },
             {
-                id:3,
-                img:'https://static2.urbanic.com/images/feeds/1673851503423/3R5A9388_1_1-.png',
-                name:'Co-ords',
+                id: 3,
+                img: 'https://static2.urbanic.com/images/feeds/1673851503423/3R5A9388_1_1-.png',
+                name: 'Co-ords',
                 route: '/catalogs/category3',
             },
             {
-                id:4,
-                img:'https://static2.urbanic.com/images/feeds/1673851517736/3R5A9342_1_1.png',
-                name:'Jumpsuits',
+                id: 4,
+                img: 'https://static2.urbanic.com/images/feeds/1673851517736/3R5A9342_1_1.png',
+                name: 'Jumpsuits',
                 route: '/catalogs/category4',
             },
             {
-                id:5,
-                img:'https://static2.urbanic.com/images/feeds/1673851112610/3R5A9393_1_1.png',
-                name:'Bottoms',
+                id: 5,
+                img: 'https://static2.urbanic.com/images/feeds/1673851112610/3R5A9393_1_1.png',
+                name: 'Bottoms',
                 route: '/catalogs/category5',
             },
             {
-                id:6,
-                img:'https://static2.urbanic.com/images/feeds/1673852485950/3R5A9440_1_1-.png',
-                name:'Dresses',
+                id: 6,
+                img: 'https://static2.urbanic.com/images/feeds/1673852485950/3R5A9440_1_1-.png',
+                name: 'Dresses',
                 route: '/catalogs/category6',
             },
             {
-                id:7,
-                img:'https://static2.urbanic.com/images/feeds/1673850909782/3R5A9381_1_1.png',
-                name:'Shirts',
+                id: 7,
+                img: 'https://static2.urbanic.com/images/feeds/1673850909782/3R5A9381_1_1.png',
+                name: 'Shirts',
                 route: '/catalogs/category6',
             },
         ],
@@ -52,7 +52,7 @@ export default {
                 name: 'Zuric two pc dfsdfsdfsdfdsfsdfsd',
                 moq: 12,
                 info: '#23636',
-                sku:25,
+                sku: 25,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2019/12/16/1576484402687c5cc3592067511e046fb985a5414a_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2020/03/16/1584329043f6a2b7ff18eed10fc606d386136fec59_thumbnail_750x.webp",
@@ -188,7 +188,12 @@ export default {
                         ]
                     },
                 ],
-
+                business: {
+                    shopName: 'Hanumant Fashion',
+                    img: 'https://wallpapercave.com/wp/wp10271263.jpg',
+                    logo: 'https://5.imimg.com/data5/SELLER/Logo/2022/9/UM/BC/OE/72344956/hfnx-120x120.png',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab soluta quis nihil adipisci voluptate impedit placeat aperiam doloremque quasi voluptatibus.'
+                }
             },
             {
                 id: 2,
@@ -196,7 +201,7 @@ export default {
                 name: 'Spun Twill 3 PC',
                 moq: 10,
                 info: '#23634',
-                sku:23,
+                sku: 23,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2019/12/23/15770878616a86e80aeb3e5c5667029c6ad6d4cab9_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images2_pi/2019/05/14/15578224524054588556_thumbnail_900x1199.webp",
@@ -308,6 +313,12 @@ export default {
                         ]
                     },
                 ],
+                business: {
+                    shopName: 'Being human',
+                    logo: 'https://i.pinimg.com/736x/51/31/29/51312900af793b8e1be37529a13f43f6.jpg',
+                    img: 'https://i.pinimg.com/736x/e4/86/c5/e486c500d7fd46609045aba1dea45efd.jpg',
+                    description: 'Ab soluta quis nihil adipisci voluptate impedit placeat aperiam doloremque quasi voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+                }
             },
             {
                 id: 3,
@@ -315,7 +326,7 @@ export default {
                 name: 'RIB TOP',
                 moq: 10,
                 info: '#23637',
-                sku:30,
+                sku: 30,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2019/11/27/157484286459ed9e2b1037c98c9ff519c695214cab_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2019/12/31/1577777275a6a049541520c22575516a85bc719dda_thumbnail_900x.webp",
@@ -456,7 +467,7 @@ export default {
                 name: 'Zuric two pc',
                 moq: 10,
                 info: '#23639',
-                sku:39,
+                sku: 39,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2020/01/15/157908187102b895ac68d9286f66e7132bd7701940_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2019/09/29/1569747933696b184c8bfb16b7da53ae86f5aaf296_thumbnail_900x.webp",
@@ -595,7 +606,7 @@ export default {
                 name: 'oversized t-shirt',
                 moq: 10,
                 info: '#23633',
-                sku:89,
+                sku: 89,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2019/10/22/15717339355bd984905d3dad38aad16f10c8aa8a6d_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2021/01/13/1610505625cef5573c92b4d1df43eca292954c67e2_thumbnail_900x.webp",
@@ -732,7 +743,7 @@ export default {
                 name: '22y28 oversized',
                 moq: 10,
                 info: '#25636',
-                sku:50,
+                sku: 50,
                 images: [
                     "https://img.ltwebstatic.com/images3_pi/2023/03/17/1679030387b6eeb09f553300f8cd45a6e8f7b1d02d_thumbnail_900x.webp",
                     "https://img.ltwebstatic.com/images3_pi/2022/09/14/166313694495cfd7691ca5422891a3bd80f1a50c91_thumbnail_900x.webp",
@@ -883,10 +894,10 @@ export default {
         },
         getSavedProducts(state) {
             return state.savedProducts;
-          },
+        },
         getWishListProducts(state) {
             return state.wishListProducts;
-          },
+        },
     },
     mutations: {
         selectProduct(state, product) {

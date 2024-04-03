@@ -39,7 +39,20 @@ export default {
         'privacy-policy',
         'terms',
         'return',
-        'brand'
+        'brand',
+        'Account',
+        'Orderfaq',
+        'Payment',
+        'Delivery',
+        'Return',
+        'Stock',
+        'CareInstructions',
+        'career',
+        'privacy-policy',
+        'terms',
+        'return',
+        'shop',
+        'CatalogDetailPage',
       ];
       return hiddenPages.includes(this.$route.name);
     },

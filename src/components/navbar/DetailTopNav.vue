@@ -1,11 +1,11 @@
 <template>
-    <div v-if="showTopNav && shop && shop.business" class="w-100">
+    <div class="w-100">
         <div class="topnav d-flex justify-content-between align-items-center py-2 px-2">
             <div class="d-none d-lg-flex align-items-center ">
-                <img :src="shop.business.logo" style="width: 75px;object-fit: contain;">
+                <img @click="goBack()" :src="product.business.logo" style="width: 75px;object-fit: contain;">
                 <!-- <img :src="`${publicPath}${img}`" style="width: 75px;object-fit: contain;"> -->
                 <p class=" mb-0 ms-1 fw-bold fs-4 " style=" color: var(--secondary-color); letter-spacing: 6px">
-                    {{ shop.business.shopName }}</p>
+                    {{ product.business.shopName }}</p>
                 <div class="d-flex ms-3">
                     <img class="ms-2" src="/img/golden.png" width="40" alt="">
                     <img class="ms-2" src="/img/silver.png" width="40" alt="">
@@ -15,11 +15,11 @@
 
             </div>
             <div class="d-flex d-lg-none align-items-center">
-                <img :src="shop.business.logo" style="width: 75px;object-fit: contain;">
+                <img @click="goBack()" :src="product.business.logo" style="width: 75px;object-fit: contain;">
                 <!-- <img :src="`${publicPath}${img}`" style="width: 50px;object-fit: contain;"> -->
                 <div class="">
                     <small class=" mb-0 ms-1 fw-bold" style=" color: var(--secondary-color); letter-spacing: 2px">{{
-        shop.business.shopName }}</small>
+                    product.business.shopName }}</small>
                     <div class="d-flex justify-content-evenly ">
                         <img src="/img/golden.png" width="30" alt="">
                         <img src="/img/silver.png" width="30" alt="">
@@ -30,11 +30,11 @@
             </div>
             <div class="  d -flex">
                 <i class="bi bi-search fs-4 mx-2" style="color: var(--secondary-color);"></i>
-                <!-- <i data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
-                    class="bi bi-list fs-4 mx-2" style="color: var(--secondary-color);"></i> -->
                 <RouterLink to=/profile>
                     <i class="bi bi-person fs-4 mx-2" style="color: var(--secondary-color);"></i>
                 </RouterLink>
+                <!-- <i data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+                    class="bi bi-list fs-4 mx-2" style="color: var(--secondary-color);"></i> -->
             </div>
         </div>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
@@ -95,10 +95,15 @@ export default {
         showTopNav: Boolean,
     },
     computed: {
-        shop() {
-            let voteId = this.$route.params.voteId;
-            return this.$store.getters['shop/getShopss'](voteId);
+        product() {
+            let productId = this.$route.params.productId;
+            return this.$store.getters["catalog/getProduct"](productId);
         },
+    },
+    methods: {
+        goBack() {
+            window.history.back()
+        }
     }
 }
 </script>

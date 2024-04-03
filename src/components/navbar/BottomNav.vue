@@ -1,7 +1,7 @@
 <template>
   <div v-if="link" class="d-flex justify-content-evenly w-100">
     <routerLink :to="link.route" :class="{ 'text-dark': currentRoute === link.name }"
-      style="text-decoration: none; color: #e9848b">
+      style="text-decoration: none; color: #84757D">
       <div class="inner-items py-1 d-flex flex-column">
         <i :class="link.icon"></i>
         <p class="m-0" style="font-size: 12px">{{ link.label }}</p>

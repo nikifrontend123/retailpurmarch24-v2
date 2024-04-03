@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar fixed-bottom " style="z-index:1;" :class="{ 'navbar-hidden': navbarHidden }">
-        <div class=" position-fixed w-100" style="bottom: 0;">
+    <nav class="navbar fixed-bottom " style="z-index:1;">
+        <div class="position-fixed w-100" style="bottom: 0;">
             <div style="background-color: white;">
                 <div class="d-flex justify-content-evenly text-center w-100 border-top borde-light">
                     <BottomNav v-for="(link, index) in links" :key="index" :link="link"></BottomNav>
@@ -15,8 +15,6 @@ import BottomNav from './BottomNav.vue';
 export default {
     data() {
         return {
-            prevScroll: window.pageYOffset,
-            navbarHidden: false,
             links: [
                 { id: 3, route: "/", name: "market", icon: "bi bi-shop-window fs-5", label: "Market" },
                 { id: 1, route: "/post", name: "post", icon: "bi bi-globe fs-5", label: "Post" },
@@ -26,20 +24,7 @@ export default {
             ],
         };
     },
-    mounted() {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    methods: {
-        handleScroll() {
-            const currentScroll = window.pageYOffset;
-            if (this.prevScroll > currentScroll) {
-                this.navbarHidden = false;
-            } else {
-                this.navbarHidden = true;
-            }
-            this.prevScroll = currentScroll;
-        },
-    },
+ 
     components: { BottomNav }
 }
 </script>

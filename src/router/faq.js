@@ -10,8 +10,8 @@ const routes = [
     component: () => import('@/components/faqs/AccountPage.vue')
   },
   {
-    path: '/order',
-    name: 'Order',
+    path: '/orderfaq',
+    name: 'Orderfaq',
     component: () => import('@/components/faqs/OrderPage.vue')
   },
   {

@@ -14,22 +14,6 @@
         <span v-if="isFavouriteClicked">Saved</span>
         <span v-else> <i class="bi bi-bookmark text-warning fs-5"></i> Save Us</span>
       </button>
-
-      <!-- <button @click="saveShopData">Save Us</button> -->
-      <div class="dropdown">
-        <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
-          class="d-flex justify-content-center align-items-center btn btn-outline-dark rounded-circle mt-1 ms-3"
-          style="width: 30px; height: 30px;">
-          <i class="bi bi-three-dots"></i>
-        </button>
-
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#"> <i class="bi bi-chat me-2"></i> Message</a></li>
-          <li><a class="dropdown-item" href="#"> <i class="bi bi-share me-2"></i> Share</a></li>
-          <li><a class="dropdown-item" href="#"> <i class="bi bi-download me-2"></i> Download</a></li>
-          <li><a class="dropdown-item" href="#"> <i class="bi bi-telephone me-2"></i> Contact</a></li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>

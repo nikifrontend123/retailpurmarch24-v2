@@ -11,8 +11,6 @@
                 </div>
                 <button class="btn btn-danger rounded-pill my-2" @click="logOut()">Log Out</button>
             </div>
-
-
             <div>
                 <router-link :to="link.path" class=" text-decoration-none text-dark" v-for="(link, index) in links"
                     :key="index">

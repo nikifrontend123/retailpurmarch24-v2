@@ -2,7 +2,7 @@
     <div v-if="showNav">
         <div class="nav-container">
             <div class="nav">
-                <TopNav></TopNav>
+                <!-- <TopNav></TopNav> -->
             </div>
             <nav ref="navBar">
                 <div class="nav-scroll">
@@ -16,11 +16,12 @@
             </nav>
         </div>
     </div>
+    
     <nav v-else ref="navBar">
-        <div class="nav-scroll">
+        <div class="nav-scroll bg-dark">
             <ul class="px-3">
                 <li v-for="section in sections" :key="section.id" class="my-3">
-                    <a class="border rounded-3" :class="{ 'active': activeTab === section.id }"
+                    <a class="" :class="{ 'active': activeTab === section.id }"
                         @click="scrollToSection(section.id)">{{ section.name }}</a>
                 </li>
             </ul>
@@ -29,11 +30,11 @@
 </template>
 
 <script>
-import TopNav from '@/components/navbar/TopNav.vue';
+// import TopNav from '@/components/navbar/TopNav.vue';
 
 export default {
     components: {
-        TopNav
+        // TopNav
     },
     props: {
         showNav: Boolean,
@@ -83,11 +84,11 @@ export default {
 <style scoped>
 .nav-container {
     position: fixed;
-    top: 0;
+    top: 89px;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #f8f8f8;
+    background-color: #000000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Add shadow */
 }
@@ -136,15 +137,18 @@ nav li {
 nav a {
     border: none;
     text-decoration: none;
-    color: #333;
+    /* color: #333; */
+    color: #fff;
     padding: 10px;
 }
 
 .active {
     border: none;
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid #fff;
+    /* border-bottom: 3px solid #000; */
     /* background-color: rgba(0, 255, 255, 0.349); */
-    color: #000;
+    /* color: #000; */
+    color: #fff;
     font-weight: bold;
 }
 </style>

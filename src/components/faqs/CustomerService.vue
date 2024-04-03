@@ -47,7 +47,7 @@ export default {
                     id: 2,
                     icon: 'bi bi-journal-richtext fs-1',
                     text: 'Orders',
-                    link: 'order',
+                    link: 'orderfaq',
                 },
                 {
                     id: 3,
