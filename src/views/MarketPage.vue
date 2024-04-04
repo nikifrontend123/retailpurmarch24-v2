@@ -17,14 +17,16 @@
       </div>
       <div class="w-100 mt-3 mb-5">
         <div class="container d-md-flex d-block justify-content-between align-items-center">
-          <div class="my-1 rounded-0 btn btn-light border py-2 w-100 d-flex justify-content-between">
-            <div class='d-flex'>
-              <span class="fw-bold">Search by</span> &nbsp;
-              <span class="text-secondary">{{ searchText }}</span>
+          <RouterLink to="/search" class="text-decoration-none w-100">
+            <div class="my-1 rounded-0 btn btn-light border py-2 w-100 d-flex justify-content-between">
+              <div class='d-flex'>
+                <span class="fw-bold">Search by</span> &nbsp;
+                <span class="text-secondary">{{ searchText }}</span>
+              </div>
+              <i class="bi bi-search"></i>
             </div>
-            <i class="bi bi-search"></i>
-          </div>
-          <StateSelector></StateSelector>
+          </RouterLink>
+          <!-- <StateSelector></StateSelector> -->
         </div>
       </div>
     </div>
@@ -81,7 +83,7 @@
             </div>
           </router-link>
           <span class="gg text-style position-absolute" style="top: 115px; left: -3px; font-size: 50px">{{
-                vote.id }}</span>
+                  vote.id }}</span>
         </div>
       </div>
     </div>
@@ -159,7 +161,7 @@
             </div>
           </div>
           <span class="gg text-style position-absolute" style="top: 115px; left: -3px; font-size: 50px">{{
-                vote.id }}</span>
+                  vote.id }}</span>
         </div>
       </div>
     </div>
@@ -281,7 +283,7 @@ import FlipCard from "@/components/retailpur/FlipCard.vue";
 import MobileFlipcard from "@/components/retailpur/MobileFlipcard.vue"
 import DigitComp from "@/components/retailpur/DigitComp.vue";
 import TextStyle from "@/components/retailpur/TextStyle.vue";
-import StateSelector from "@/components/StateSelector.vue";
+// import StateSelector from "@/components/StateSelector.vue";
 export default {
   name: "HomeView",
   components: {
@@ -293,7 +295,7 @@ export default {
     FlipCard,
     MobileFlipcard,
     DigitComp,
-    StateSelector
+    // StateSelector
   },
   data() {
     return {

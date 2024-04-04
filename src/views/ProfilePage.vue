@@ -1,17 +1,37 @@
 <template>
-    <RetailpurTopNav></RetailpurTopNav>
+    <!-- <RetailpurTopNav></RetailpurTopNav> -->
     <div class=" ">
+        <div class="d-flex justify-content-start p-2 bg-light ">
+            <i @click="goBack()" class="bi bi-chevron-left fs-5"></i>
+        </div>
         <div class="  my-2">
-            <div class="d-flex flex-column justify-content-center align-items-center mb-4 border-bottom">
+            <RouterLink to="/userProfile">
+                <div class="d-flex justify-content-end px-3">
+                    <i class="bi bi-pen"></i>
+                </div>
+            </RouterLink>
+            <div class="d-flex flex-column justify-content-center align-items-center mb-4 border-bottom pb-4">
                 <img :src="profile" class="rounded-circle border" style="width:80px ; height: 80px;" alt="">
                 <div class="ps-2 text-center">
                     <strong class="">Nikhil</strong>
                     <p class="mb-1">nkhil777@gmail.com</p>
                     <p class="mb-1">8952635214</p>
                 </div>
-                <button class="btn btn-danger rounded-pill my-2" @click="logOut()">Log Out</button>
             </div>
+
             <div>
+                <div class="border-bottom py-4 mb-5">
+                    <router-link :to="link.path" class=" text-decoration-none text-dark"
+                        v-for="(link, index) in userLinks" :key="index">
+                        <div class="btn btn-light d-flex justify-content-between align-items-center m-3 border">
+                            <div class="p-2">
+                                <i class="bi fs-3" :class="link.icon"></i>
+                                <span class="ms-3 fs-5">{{ link.name }} </span>
+                            </div>
+                        </div>
+                    </router-link>
+                </div>
+
                 <router-link :to="link.path" class=" text-decoration-none text-dark" v-for="(link, index) in links"
                     :key="index">
                     <div class="btn btn-light d-flex justify-content-between align-items-center m-3 border">
@@ -22,20 +42,84 @@
                     </div>
                 </router-link>
             </div>
+            <div class="py-3 border-top mt-5">
+                <span class="d-flex align-items-center m-3" type="button" data-bs-toggle="modal"
+                    data-bs-target="#languageModal">
+                    <button class="btn btn-dark w-100 py-3 fs-5">
+                        <i class="bi bi-globe fs-5 mx-2 text-white" 
+                        style="color: var(--secondary-color);"></i>
+                        {{ getSelectedLanguageName(selectedLanguage) }}
+                    </button>
+                </span>
+                <div class="m-3">
+                    <button class="btn btn-danger rounded w-100 py-3 fs-5" @click="logOut()">
+                        <i class="bi bi-box-arrow-right fs-5 mx-2 text-white"
+                            style="color: var(--secondary-color);"></i>
+                        Log Out
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="languageModalLabel">Select Language</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Search language"
+                                    v-model="searchLanguage">
+                            </div>
+                            <div class="language-list">
+                                <div v-for="language in filteredLanguages" :key="language.code" class="language-item"
+                                    @click="selectLanguage(language)">
+                                    <span :class="{ 'selected': selectedLanguage === language.code }">{{ language.name
+                                        }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary" @click="setLanguage">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
+// import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
 export default {
     components: {
-        RetailpurTopNav
+        // RetailpurTopNav
     },
     name: 'MyAccount',
     data() {
         return {
             profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_aNRVLwfw1U28A7a4uf57VPdpzlHNA4WARw&usqp=CAU',
+            userLinks: [
+                {
+                    icon: 'bi-bookmark-star',
+                    name: 'Favourite',
+                    path: '/favourite-catalogs',
+                },
+                {
+                    icon: 'bi-heart',
+                    name: 'Wishlist',
+                    path: '/wishlist',
+                },
+                {
+                    icon: 'bi-cart',
+                    name: 'Queries',
+                    path: '/order',
+                },
+            ],
             links: [
                 {
                     icon: 'bi-person',
@@ -73,6 +157,22 @@ export default {
                     name: 'Login',
                     path: '/login-page'
                 },
+            ],
+            searchLanguage: '',
+            selectedLanguage: 'en',
+            languages: [
+                { code: 'en', name: 'English' },
+                { code: 'hi', name: 'Hindi' },
+                { code: 'fr', name: 'French' },
+                { code: 'es', name: 'Spanish' },
+                { code: 'de', name: 'Deutsch' },
+                { code: 'ja', name: '日本語' },
+                { code: 'ru', name: 'Русский' },
+                { code: 'th', name: 'ภาษาไทย' },
+                { code: 'tr', name: 'Türkçe' },
+                { code: 'vi', name: 'Tiếng Việt' },
+                { code: 'zh-cn', name: '中文(简体)' },
+                { code: 'zh-tw', name: '中文(繁體)' },
             ]
         }
     },
@@ -80,6 +180,11 @@ export default {
         this.$store.dispatch('LoggedInUserStore/fetchUserDetail')
     },
     computed: {
+        filteredLanguages() {
+            return this.languages.filter(language => {
+                return language.name.toLowerCase().includes(this.searchLanguage.toLowerCase());
+            });
+        },
         user() {
             return this.$store.getters['LoggedInUserStore/getUserDetail']
         }
@@ -87,9 +192,37 @@ export default {
     methods: {
         logOut() {
             this.$store.dispatch('LoggedInUserStore/logout')
+        },
+        selectLanguage(language) {
+            this.selectedLanguage = language.code;
+        },
+        getSelectedLanguageName(code) {
+            const selectedLanguage = this.languages.find(language => language.code === code);
+            return selectedLanguage ? selectedLanguage.name : '';
+        },
+        goBack() {
+            window.history.back();
         }
     }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.language-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.language-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.language-item:hover {
+    background-color: #f5f5f5;
+}
+
+.selected {
+    font-weight: bold;
+}
+</style>

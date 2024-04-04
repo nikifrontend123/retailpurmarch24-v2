@@ -44,7 +44,7 @@
             <div class='d-flex justify-content-center w-100 mt-5'>
                 <div v-for="(link, index) in links" :key="index" class="d-flex flex-column align-items-center w-100">
                     <div class="d-flex justify-content-center  align-items-center shadow rounded-3 bg-white "
-                        style='width:40px; height: 40px ; '>
+                        style='width:40px; height: 40px ; ' @click="handleShare(link)">
                         <i :class="link.icon"></i>
                     </div>
                     <p class="mt-2" style="font-size: 12px">{{ link.label }}</p>
@@ -82,6 +82,14 @@ export default {
             // Dispatch the saveShop action with the shop data
             this.$store.dispatch('shop/saveShop', shopData);
         },
+        handleShare(link) {
+            if (link.name === "Share") {
+                // Replace 'your_link_here' with the actual link you want to share
+                const url = encodeURIComponent('http://192.168.1.163:8080/');
+                const whatsappUrl = `https://wa.me/?text=${url}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        }
     }
 }
 </script>

@@ -12,6 +12,16 @@ const routes = [
     component: () => import('../components/profile/ProfileDetail.vue')
   },
   {
+    path: "/userProfile",
+    name: "userProfile",
+    component: () => import('../components/profile/UserProfile.vue')
+  },
+  {
+    path: "/new-address",
+    name: "NewAddress",
+    component: () => import('../components/profile/NewAddress.vue')
+  },
+  {
     path: "/brand",
     name: "brand",
     component: () => import('../components/profile/BrandInfo.vue')

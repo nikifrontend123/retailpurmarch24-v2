@@ -72,120 +72,22 @@ export default {
                     {
                         name: "S",
                         price: '6500',
-                        mesurements: [
-                            {
-                                name: "Bottom Length",
-                                value: "40in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "25.1in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Bust",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Sleeve Width",
-                                value: "38.6in"
-                            },
-                        ]
                     },
                     {
                         name: "M",
                         price: '500',
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "45.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "41.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "24.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "L",
                         price: '300',
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XL",
                         price: '4000',
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XXL",
                         price: '5000',
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                 ],
                 business: {
@@ -219,98 +121,18 @@ export default {
                     {
                         name: "S",
                         price: 820,
-                        mesurements: [
-                            {
-                                name: "Bottom Length",
-                                value: "40in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "25.1in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Bust",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Sleeve Width",
-                                value: "38.6in"
-                            },
-                        ]
                     },
                     {
                         name: "M",
                         price: 820,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "45.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "41.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "24.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "L",
                         price: 820,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XL",
                         price: 820,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                 ],
                 business: {
@@ -344,120 +166,22 @@ export default {
                     {
                         name: "S",
                         price: 250,
-                        mesurements: [
-                            {
-                                name: "Bottom Length",
-                                value: "40in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "25.1in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Bust",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Sleeve Width",
-                                value: "38.6in"
-                            },
-                        ]
                     },
                     {
                         name: "M",
                         price: 250,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "45.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "41.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "24.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "L",
                         price: 250,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XL",
                         price: 250,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XXL",
                         price: 250,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                 ],
             },
@@ -483,120 +207,22 @@ export default {
                     {
                         name: "S",
                         price: 730,
-                        mesurements: [
-                            {
-                                name: "Bottom Length",
-                                value: "40in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "25.1in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Bust",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Sleeve Width",
-                                value: "38.6in"
-                            },
-                        ]
                     },
                     {
                         name: "M",
                         price: 730,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "45.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "41.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "24.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "L",
                         price: 730,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XL",
                         price: 730,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XXL",
                         price: 730,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                 ],
             },
@@ -620,120 +246,22 @@ export default {
                     {
                         name: "S",
                         price: 324,
-                        mesurements: [
-                            {
-                                name: "Bottom Length",
-                                value: "40in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "25.1in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Bust",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Sleeve Width",
-                                value: "38.6in"
-                            },
-                        ]
                     },
                     {
                         name: "M",
                         price: 324,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "45.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "41.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "24.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "L",
                         price: 324,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XL",
                         price: 324,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XXL",
                         price: 324,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                 ],
             },
@@ -759,120 +287,22 @@ export default {
                     {
                         name: "S",
                         price: 282,
-                        mesurements: [
-                            {
-                                name: "Bottom Length",
-                                value: "40in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "25.1in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Bust",
-                                value: "38.6in"
-                            },
-                            {
-                                name: "Sleeve Width",
-                                value: "38.6in"
-                            },
-                        ]
                     },
                     {
                         name: "M",
                         price: 282,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "45.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "41.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "24.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "L",
                         price: 282,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XL",
                         price: 282,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                     {
                         name: "XXL",
                         price: 282,
-                        mesurements: [
-                            {
-                                name: "Length",
-                                value: "38.2in"
-                            },
-                            {
-                                name: "Hips",
-                                value: "40.7in"
-                            },
-                            {
-                                name: "Thigh",
-                                value: "22.8in"
-                            },
-                            {
-                                name: "Waist",
-                                value: "32.6in"
-                            },
-                        ]
                     },
                 ],
             },
