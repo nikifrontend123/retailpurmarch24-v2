@@ -66,7 +66,7 @@ export default {
             links: [
                 { id: 3, name: "Message", icon: "bi bi-chat fs-5", label: "Message" },
                 { id: 1, name: "Share", icon: "bi bi-share fs-5", label: "Share" },
-                { id: 2, name: "Download", icon: "bi bi-download fs-5", label: "Download" },
+                { id: 2, name: "Search", icon: "bi bi-search fs-5", label: "Search" },
                 { id: 5, name: "Contact", icon: "bi bi-telephone fs-5", label: "Contact" },
             ],
         }

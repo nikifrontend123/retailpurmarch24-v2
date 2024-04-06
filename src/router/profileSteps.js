@@ -73,6 +73,11 @@ const routes = [
     name: "manage",
     component: () => import('../components/profile/ManageInfo.vue')
   },
+  {
+    path: "/offer",
+    name: "offer",
+    component: () => import('../views/OfferPage.vue')
+  },
 
 
 

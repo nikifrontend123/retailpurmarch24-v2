@@ -18,9 +18,9 @@
                 <RouterLink to=/profile>
                     <i class="bi bi-person fs-4 mx-2" style="color: var(--secondary-color);"></i>
                 </RouterLink>
-              
+
             </div>
-          
+
         </div>
 
     </div>
@@ -54,12 +54,10 @@ export default {
                 //     router: '/login-page'
                 // },
             ],
-           
+
         }
     },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

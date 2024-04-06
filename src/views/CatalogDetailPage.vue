@@ -15,7 +15,7 @@
         <div class="container col-lg-7 px-3">
           <h1 class="text-start mb-2 fs-5 py-1 text-dark text-muted">
             {{ product.name }} Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Pariatur, blanditiis
+            Pariatur, blandi
           </h1>
           <div class="d-flex justify-content-between">
             <h1 class="text-start mb-2 fs-5 py-1 text-muted fw-bold">

@@ -19,17 +19,14 @@
                 <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                 <label for="floatingTextarea">Discreption</label>
             </div>
-
-            <router-link to="/new-address"
-            class="col my-3 d-flex flex-column align-items-center justify-content-center text-dark">
-            <i class="bi bi-plus-circle-fill fs-1" ></i>
-            <p class="mb-0">Add New Address</p>
-        </router-link>
- 
-                <button class="btn btn-dark w-100 py-3 mb-5" type="submit">Save<i
-                        class="bi bi-arrow-right ms-2"></i></button>
-             
         </form>
+
+            <BillingAdd></BillingAdd>
+ 
+        <button class="btn btn-dark w-100 py-3 mb-5" type="submit">
+        Save
+        <i class="bi bi-arrow-right ms-2"></i>
+        </button>
 
 
         <!-- ----------------------------------------------------------------- -->
@@ -39,10 +36,11 @@
 <script>
 import ProfileNav from '@/components/navbar/ProfileNav.vue';
 import ImageUploadBox from '@/components/ImageUploadBox.vue';
+import BillingAdd from '@/components/profile/BillingAdd.vue';
 
 export default {
     components: {
-        ProfileNav, ImageUploadBox
+        ProfileNav, ImageUploadBox, BillingAdd
     },
     name: "StepThree",
 

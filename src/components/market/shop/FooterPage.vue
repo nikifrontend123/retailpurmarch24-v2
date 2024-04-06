@@ -4,7 +4,8 @@
             <div class="mb-3 text-center">
                 <router-link to="/">
                     <!-- <img :src="`${publicPath}${img}`" style="width: 100px;object-fit: contain;"> -->
-                    <img src="https://5.imimg.com/data5/SELLER/Logo/2022/9/UM/BC/OE/72344956/hfnx-120x120.png" style="width: 100px;object-fit: contain;">
+                    <img src="https://5.imimg.com/data5/SELLER/Logo/2022/9/UM/BC/OE/72344956/hfnx-120x120.png"
+                        style="width: 100px;object-fit: contain;">
                 </router-link>
                 <p class="mb-2 fw-bold" style="letter-spacing: 6px">HANUMANT FASHION</p>
                 <p class="mb-2">Specially Crafted For Alpha Males</p>
@@ -47,7 +48,8 @@
         </div>
         <div class="text-center py-3 d-flex align-items-center justify-content-center"
             style="background-color: var(--primary-color);">
-            <p style="color: var(--secondary-color);" class=" mb-0"> Copyright © 2024 HanumantFashion.in All rights reserved</p>
+            <p style="color: var(--secondary-color);" class=" mb-0"> Copyright © 2024 <router-link class="text-dark"
+                    to="/">Retailpur.in</router-link> All rights reserved</p>
         </div>
     </div>
 </template>

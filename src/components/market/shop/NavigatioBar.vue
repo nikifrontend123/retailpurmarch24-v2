@@ -1,28 +1,26 @@
 <template>
-    <div v-if="showNav">
-        <div class="nav-container">
-            <div class="nav">
-                <!-- <TopNav></TopNav> -->
+    <div v-if="showNav" class="nav-container">
+        <nav ref="navBar">
+            <div class="nav-scroll">
+                <ul class="px-3">
+                    <li v-for="section in sections" :key="section.id" class="my-3">
+                        <a class="" :class="{ active: activeTab === section.id }" href="#"
+                            @click.prevent="scrollToSection(section.id)">
+                            {{ section.name }}
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <nav ref="navBar">
-                <div class="nav-scroll">
-                    <ul class="px-3">
-                        <li v-for="section in sections" :key="section.id" class="my-3">
-                            <a class=" " :class="{ 'active': activeTab === section.id }"
-                                @click="scrollToSection(section.id)">{{ section.name }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        </nav>
     </div>
-    
     <nav v-else ref="navBar">
         <div class="nav-scroll bg-dark">
             <ul class="px-3">
                 <li v-for="section in sections" :key="section.id" class="my-3">
-                    <a class="" :class="{ 'active': activeTab === section.id }"
-                        @click="scrollToSection(section.id)">{{ section.name }}</a>
+                    <a class="" :class="{ active: activeTab === section.id }" href="#"
+                        @click.prevent="scrollToSection(section.id)">
+                        {{ section.name }}
+                    </a>
                 </li>
             </ul>
         </div>
@@ -39,45 +37,33 @@ export default {
     props: {
         showNav: Boolean,
         activeTab: String,
-        sections: Array
+        sections: Array,
     },
-
     mounted() {
-        this.observer = new IntersectionObserver(this.handleIntersection, {
-            rootMargin: '0px 0px -50% 0px',
-        });
-        this.sections.forEach((section) => {
-            const el = document.getElementById(section.id);
-            if (el) {
-                this.observer.observe(el);
-            }
-        });
+        window.addEventListener('scroll', this.handleScroll);
     },
     beforeUnmount() {
-        if (this.observer) {
-            this.observer.disconnect();
-        }
+        window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
-        handleIntersection(entries) {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    this.$emit('update-active-tab', entry.target.id);
-                }
+        handleScroll() {
+            const scrollPosition = window.pageYOffset + 200; // Adjust the offset as needed
+            const currentSection = this.sections.find((section) => {
+                const el = document.getElementById(section.id);
+                return el && el.offsetTop <= scrollPosition && el.offsetTop + el.offsetHeight > scrollPosition;
             });
+            if (currentSection && currentSection.id !== this.activeTab) {
+                this.$emit('update-active-tab', currentSection.id);
+            }
         },
         scrollToSection(sectionId) {
             const el = document.getElementById(sectionId);
             if (el) {
-                window.scrollTo({
-                    top: el.offsetTop - 160,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: el.offsetTop - 160, behavior: 'smooth' });
                 this.$emit('update-active-tab', sectionId);
             }
-        }
-
-    }
+        },
+    },
 };
 </script>
 
@@ -90,28 +76,17 @@ export default {
     z-index: 1000;
     background-color: #000000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Add shadow */
-}
-
-.nav {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background-color: #f8f8f8;
 }
 
 .nav-scroll {
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
-    /* Remove scrollbar */
     -ms-overflow-style: none;
-    /* Remove scrollbar in IE */
 }
 
 .nav-scroll::-webkit-scrollbar {
     display: none;
-    /* Remove scrollbar in WebKit browsers */
 }
 
 ul.px-3 {
@@ -145,9 +120,6 @@ nav a {
 .active {
     border: none;
     border-bottom: 3px solid #fff;
-    /* border-bottom: 3px solid #000; */
-    /* background-color: rgba(0, 255, 255, 0.349); */
-    /* color: #000; */
     color: #fff;
     font-weight: bold;
 }

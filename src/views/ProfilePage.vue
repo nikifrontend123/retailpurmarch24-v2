@@ -5,17 +5,30 @@
             <i @click="goBack()" class="bi bi-chevron-left fs-5"></i>
         </div>
         <div class="  my-2">
-            <RouterLink to="/userProfile">
-                <div class="d-flex justify-content-end px-3">
-                    <i class="bi bi-pen"></i>
-                </div>
-            </RouterLink>
-            <div class="d-flex flex-column justify-content-center align-items-center mb-4 border-bottom pb-4">
-                <img :src="profile" class="rounded-circle border" style="width:80px ; height: 80px;" alt="">
-                <div class="ps-2 text-center">
-                    <strong class="">Nikhil</strong>
-                    <p class="mb-1">nkhil777@gmail.com</p>
-                    <p class="mb-1">8952635214</p>
+            <div class="scroll-fixed    bg-white py-3" :class="{ 'fixed-top': isFixed }" >
+                <div class="bg-white" >
+                    <div
+                        class="  d-flex justify-content-between align-items-startw mx-2 rounded-top-2  p-2 border bg-white">
+                        <div class="d-flex bg-white">
+                            <img :src="profile" class="rounded-circle border" style="width:80px ; height: 80px;" alt="">
+                            <div class="ps-3">
+                                <strong class="fs-4">Nikhil</strong>
+                                <p class="mb-1 text-danger">View activity <i class="bi bi-chevron-right"></i></p>
+                                <!-- <p class="mb-1">nkhil777@gmail.com</p>
+                    <p class="mb-1">8952635214</p> -->
+                            </div>
+                        </div>
+                        <RouterLink to="/userProfile">
+                            <i class="bi bi-pen"></i>
+                        </RouterLink>
+                    </div>
+                    <div class="bg-dark mx-2 rounded-bottom-2 p-2 border">
+                        <RouterLink to='/offer'
+                            class="text-decoration-none text-warning  d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-heart pe-2"></i> Join Retailpur Gold</span>
+                            <i class="bi bi-bi bi-chevron-right"></i>
+                        </RouterLink>
+                    </div>
                 </div>
             </div>
 
@@ -46,8 +59,7 @@
                 <span class="d-flex align-items-center m-3" type="button" data-bs-toggle="modal"
                     data-bs-target="#languageModal">
                     <button class="btn btn-dark w-100 py-3 fs-5">
-                        <i class="bi bi-globe fs-5 mx-2 text-white" 
-                        style="color: var(--secondary-color);"></i>
+                        <i class="bi bi-globe fs-5 mx-2 text-white" style="color: var(--secondary-color);"></i>
                         {{ getSelectedLanguageName(selectedLanguage) }}
                     </button>
                 </span>
@@ -102,6 +114,7 @@ export default {
     name: 'MyAccount',
     data() {
         return {
+            isFixed: false,
             profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_aNRVLwfw1U28A7a4uf57VPdpzlHNA4WARw&usqp=CAU',
             userLinks: [
                 {
@@ -177,7 +190,11 @@ export default {
         }
     },
     mounted() {
+        window.addEventListener('scroll', this.handleScroll);
         this.$store.dispatch('LoggedInUserStore/fetchUserDetail')
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
     },
     computed: {
         filteredLanguages() {
@@ -202,6 +219,16 @@ export default {
         },
         goBack() {
             window.history.back();
+        },
+        handleScroll() {
+            // Get the scroll position
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Define the threshold for fixing the section
+            const threshold = 200; // Adjust this value as needed
+
+            // Update isFixed based on the scroll position
+            this.isFixed = scrollPosition >= threshold;
         }
     }
 }
@@ -224,5 +251,14 @@ export default {
 
 .selected {
     font-weight: bold;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* adjust z-index as needed */
 }
 </style>

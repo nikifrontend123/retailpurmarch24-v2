@@ -3,146 +3,146 @@
     <TopNav :showTopNav="showTopNav"></TopNav>
     <SectionOne></SectionOne>
 
-    <div class="container mb-5">
-      <div class="d-flex justify-content-between align-items-center w-100 mb-4">
-        <div class="d-block d-md-flex w-100">
-          <div class="border px-1 fw-bold w-100 bg-light">
-            <p class="p-2 mb-0 w-100">Shop Name</p>
-          </div>
-          <div class="w-100 border px-1">
-            <p class="p-2 mb-0 w-100">{{ shop.business.shopName }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between align-items-center w-100 mb-4">
-        <div class="d-block d-md-flex w-100">
-          <div class="border px-1 fw-bold w-100 bg-light">
-            <p class="p-2 mb-0 w-100">Description</p>
-          </div>
-          <div class="w-100 border px-1">
-            <p class="p-2 mb-0 w-100">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab soluta quis
-              nihil adipisci voluptate impedit placeat aperiam doloremque quasi
-              voluptatibus.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <NavigatioBar v-if="showNavigationBar" :showNav="showNav" :activeTab="activeTab" :sections="sections"
+      @update-active-tab="updateActiveTab">
+    </NavigatioBar>
 
-    <div class="mb-5 container">
-      <div class="d-flex justify-content-evenly">
-        <div class="text-center fw-bold">
-          <p class="m-0 d-flex justify-content-center align-items-center fs-4">
-            <AutoCounter :data="10"> </AutoCounter>
-          </p>
-          <small style="font-size: var(--x-small)"
-            >Years Of <br />
-            Experience</small
-          >
-        </div>
-        <div class="separator"></div>
-        <div class="text-center fw-bold">
-          <p class="m-0 d-flex justify-content-center align-items-center fs-4">
-            <AutoCounter :data="100"> </AutoCounter>
-          </p>
-          <small style="font-size: var(--x-small)"
-            >Products <br />
-            Listed</small
-          >
-        </div>
-        <div class="separator"></div>
-        <div class="text-center fw-bold">
-          <p class="m-0 d-flex justify-content-center align-items-center fs-4">
-            <AutoCounter :data="1000"> </AutoCounter>
-          </p>
-          <small style="font-size: var(--x-small)"
-            >Happy <br />
-            Customers</small
-          >
-        </div>
-      </div>
-    </div>
+    <CollectionPage :collections="collections"> </CollectionPage>
 
-    <div class="bg-light py-3">
-      <div class="py-2 container d-flex justify-content-between align-items-center">
-        <p class="mb-0"><span class="fs-2">Our Promoters </span></p>
-        <RouterLink to="/allsupporters" class="text-decoration-none text-dark">
-          <small>See All <i class="bi bi-arrow-right"></i></small>
-        </RouterLink>
-      </div>
-      <div class="container mb-5 mt-3">
-        <div class="row row-cols-3 row-cols-md-6 g-2">
-          <div v-for="(vote, index) in votes" :key="index" class="col">
-            <div
-              class="card rounded-0 d-flex justify-content-start align-items-center pt-3"
-            >
-              <img :src="vote.img" alt="" style="width: 60%" />
-              <p class="fw-bold mt-2 mb-1">{{ vote.name }}</p>
-              <div class="d-flex justify-content-evenly mb-2">
-                <img src="/img/golden.png" width="15" alt="" />
-                <img src="/img/silver.png" width="15" alt="" />
-                <img src="/img/black.png" width="15" alt="" />
-                <img src="/img/white.png" width="15" alt="" />
+    <div id="SecTab">
+      <SectionNavbar :sections="sectionTab" v-if="showSectionNavbar" :activeTab="activeTab"
+        @update-active-tab="updateActiveTab"></SectionNavbar>
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+
+        <div id="About">
+          <div class="container mb-5">
+            <div class="d-flex justify-content-between align-items-center w-100 mb-4">
+              <div class="d-block d-md-flex w-100">
+                <div class="border px-1 fw-bold w-100 bg-light">
+                  <p class="p-2 mb-0 w-100">Shop Name</p>
+                </div>
+                <div class="w-100 border px-1">
+                  <p class="p-2 mb-0 w-100">{{ shop.business.shopName }}</p>
+                </div>
               </div>
-              <!-- <p class="text-center" style=" font-size: var(--x-small)">
-                            <span>{{ vote.post }}</span> at <span>{{ vote.businessName }}</span>
-                        </p> -->
-              <div class="d-flex">
-                <p class="mb-0" style="font-size: var(--x-small)">{{ vote.support }}+</p>
-                &nbsp;
-                <p style="font-size: var(--x-small)">Promoters</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center w-100 mb-4">
+              <div class="d-block d-md-flex w-100">
+                <div class="border px-1 fw-bold w-100 bg-light">
+                  <p class="p-2 mb-0 w-100">Description</p>
+                </div>
+                <div class="w-100 border px-1">
+                  <p class="p-2 mb-0 w-100">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab soluta quis
+                    nihil adipisci voluptate impedit placeat aperiam doloremque quasi
+                    voluptatibus.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5 container">
+            <div class="d-flex justify-content-evenly">
+              <div class="text-center fw-bold">
+                <p class="m-0 d-flex justify-content-center align-items-center fs-4">
+                  <AutoCounter :data="10"> </AutoCounter>
+                </p>
+                <small style="font-size: var(--x-small)">Years Of <br />
+                  Experience</small>
+              </div>
+              <div class="separator"></div>
+              <div class="text-center fw-bold">
+                <p class="m-0 d-flex justify-content-center align-items-center fs-4">
+                  <AutoCounter :data="100"> </AutoCounter>
+                </p>
+                <small style="font-size: var(--x-small)">Products <br />
+                  Listed</small>
+              </div>
+              <div class="separator"></div>
+              <div class="text-center fw-bold">
+                <p class="m-0 d-flex justify-content-center align-items-center fs-4">
+                  <AutoCounter :data="1000"> </AutoCounter>
+                </p>
+                <small style="font-size: var(--x-small)">Happy <br />
+                  Customers</small>
               </div>
             </div>
           </div>
         </div>
+
+        <div id="Promoters" class="bg-light py-3">
+          <div class="py-2 container d-flex justify-content-between align-items-center">
+            <p class="mb-0"><span class="fs-2">Our Promoters </span></p>
+            <RouterLink to="/allsupporters" class="text-decoration-none text-dark">
+              <small>See All <i class="bi bi-arrow-right"></i></small>
+            </RouterLink>
+          </div>
+          <div class="container mb-5 mt-3">
+            <div class="row row-cols-3 row-cols-md-6 g-2">
+              <div v-for="(vote, index) in votes" :key="index" class="col">
+                <div class="card rounded-0 d-flex justify-content-start align-items-center pt-3">
+                  <img :src="vote.img" alt="" style="width: 60%" />
+                  <p class="fw-bold mt-2 mb-1">{{ vote.name }}</p>
+                  <div class="d-flex justify-content-evenly mb-2">
+                    <img src="/img/golden.png" width="15" alt="" />
+                    <img src="/img/silver.png" width="15" alt="" />
+                    <img src="/img/black.png" width="15" alt="" />
+                    <img src="/img/white.png" width="15" alt="" />
+                  </div>
+                  <!-- <p class="text-center" style=" font-size: var(--x-small)">
+                            <span>{{ vote.post }}</span> at <span>{{ vote.businessName }}</span>
+                        </p> -->
+                  <div class="d-flex">
+                    <p class="mb-0" style="font-size: var(--x-small)">{{ vote.support }}+</p>
+                    &nbsp;
+                    <p style="font-size: var(--x-small)">Promoters</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="Achivements" class="">
+          <p class="p-2 text-center mb-0 bill"><span class="fs-2">~ Achivements ~</span></p>
+          <div class="container mb-5">
+            <RecognitionBanner></RecognitionBanner>
+          </div>
+        </div>
+
+        <div id="Brands" class="section mb-5">
+          <p class="p-2 text-center mt-3 mb-0 bill"><span class="fs-2">~ Brands ~</span></p>
+          <div class="container mb-5">
+            <TeamBanner></TeamBanner>
+          </div>
+        </div>
+
+        <div id="Reviews" class="">
+          <div class="container">
+            <div class="py-2 container d-flex justify-content-between align-items-center">
+              <p class="mb-0"><span class="fs-2">Our Reviews </span></p>
+              <RouterLink to="/review" class="text-decoration-none text-dark">
+                <small>See All <i class="bi bi-arrow-right"></i></small>
+              </RouterLink>
+            </div>
+          </div>
+          <ReviewComp :showAllReviews="true"></ReviewComp>
+        </div>
+
+        <div id="Connect" class="">
+          <BottomSec id="section7" class="section"></BottomSec>
+        </div>
+
       </div>
-    </div>
 
-    <p class="p-2 text-center mb-0"><span class="fs-2">~ Brands ~</span></p>
-    <div class="container mb-5">
-      <RecognitionBanner></RecognitionBanner>
-    </div>
-
-    <div id="section1" class="section mb-5">
-      <p class="p-2 text-center mt-3 mb-0 bill"><span class="fs-2">~ Brands ~</span></p>
-      <div class="container mb-5">
-        <TeamBanner></TeamBanner>
+      <div v-if="showScrollButton" @click="scrollToTop" class="scroll-button border rounded-circle"
+        style="opacity: 60%; background-color: #000000; color: #ffffff">
+        <i class="d-flex justify-content-center align-items-center bi bi-arrow-up-short"></i>
       </div>
+      <FooterPage></FooterPage>
     </div>
-
-    <NavigatioBar
-      :showNav="showNav"
-      :activeTab="activeTab"
-      :sections="sections"
-      @update-active-tab="updateActiveTab"
-    ></NavigatioBar>
-
-    <CollectionPage :collections="collections"> </CollectionPage>
-
-    <div class="container">
-      <div class="py-2 container d-flex justify-content-between align-items-center">
-        <p class="mb-0"><span class="fs-2">Our Reviews </span></p>
-        <RouterLink to="/review" class="text-decoration-none text-dark">
-          <small>See All <i class="bi bi-arrow-right"></i></small>
-        </RouterLink>
-      </div>
-    </div>
-    <ReviewComp :showAllReviews="true"></ReviewComp>
-
-    <BottomSec id="section7" class="section"></BottomSec>
-
-    <div
-      v-if="showScrollButton"
-      @click="scrollToTop"
-      class="scroll-button border rounded-circle"
-      style="opacity: 60%; background-color: #000000; color: #ffffff"
-    >
-      <i
-        class="d-flex justify-content-center align-items-center bi bi-arrow-up-short"
-      ></i>
-    </div>
-    <FooterPage></FooterPage>
   </div>
 </template>
 
@@ -153,6 +153,7 @@ import AutoCounter from "@/components/market/shop/AutoCounter.vue";
 import RecognitionBanner from "@/components/market/shop/RecognitionBanner.vue";
 import TeamBanner from "@/components/market/shop/TeamBanner.vue";
 import NavigatioBar from "@/components/market/shop/NavigatioBar.vue";
+import SectionNavbar from "@/components/market/shop/SectionNavbar.vue";
 import CollectionPage from "@/components/market/shop/CollectionPage.vue";
 import ReviewComp from "@/components/market/shop/ReviewComp.vue";
 import BottomSec from "@/components/market/shop/BottomSec.vue";
@@ -165,6 +166,7 @@ export default {
     RecognitionBanner,
     TeamBanner,
     NavigatioBar,
+    SectionNavbar,
     CollectionPage,
     ReviewComp,
     BottomSec,
@@ -175,6 +177,9 @@ export default {
   },
   data() {
     return {
+      showNavigationBar: false,
+      showSectionNavbar: false,
+      collectionPageVisible: false,
       showScrollButton: false,
       showNav: false,
       showTopNav: false,
@@ -224,6 +229,14 @@ export default {
           support: 876,
         },
       ],
+      sectionTab: [
+        { id: 'About', name: 'About' },
+        { id: 'Promoters', name: 'Promoters' },
+        { id: 'Achivements', name: 'Achievements' },
+        { id: 'Brands', name: 'Brands' },
+        { id: 'Reviews', name: 'Reviews' },
+        { id: 'Connect', name: 'Connect' }
+      ]
     };
   },
   computed: {
@@ -237,6 +250,9 @@ export default {
   },
   methods: {
     handleScroll() {
+      this.handleScrollBtn();
+      this.checkSecTabVisibility();
+
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       for (let i = 0; i < this.sections.length; i++) {
@@ -249,7 +265,7 @@ export default {
           const sectionBottom = rect.bottom + scrollTop;
 
           if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
-            const newActiveTab = `section${section.id}`;
+            const newActiveTab = section.id.replace('section', '');
 
             if (this.activeTab !== newActiveTab) {
               this.activeTab = newActiveTab;
@@ -257,6 +273,29 @@ export default {
             }
             break;
           }
+        }
+      }
+
+      const SecTab = document.getElementById('SecTab');
+      if (SecTab) {
+        const rect = SecTab.getBoundingClientRect();
+        const isSecTabVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+        if (isSecTabVisible) {
+          this.showNavigationBar = false;
+        } else {
+          this.showNavigationBar = true;
+        }
+      }
+      const secTabDiv = document.getElementById('SecTab');
+      if (secTabDiv) {
+        const rect = secTabDiv.getBoundingClientRect();
+        const isSecTabVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+        if (isSecTabVisible) {
+          this.showSectionNavbar = true; // Show the SectionNavbar
+        } else {
+          this.showSectionNavbar = false; // Hide the SectionNavbar
         }
       }
     },
@@ -272,9 +311,38 @@ export default {
         behavior: "smooth",
       });
     },
+
+    handleIntersection(entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.collectionPageVisible = false;
+        } else {
+          this.collectionPageVisible = true;
+        }
+      });
+    },
+
+    checkSecTabVisibility() {
+      const SecTab = document.getElementById('SecTab');
+      if (SecTab) {
+        const rect = SecTab.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+        this.showNavigationBar = !isVisible;
+      }
+    },
   },
 
   mounted() {
+    const SecTab = document.getElementById('SecTab');
+    if (SecTab) {
+      const observer = new IntersectionObserver(this.handleIntersection, { root: null, threshold: 0.5 });
+      observer.observe(SecTab);
+    }
+
+    window.addEventListener('scroll', this.handleScroll);
+
+    this.checkSecTabVisibility();
+    window.addEventListener('scroll', this.handleScroll);
     window.addEventListener("scroll", this.handleScrollBtn);
     if (this.sections.length > 0) {
       console.log("Sections length:", this.sections.length);
@@ -291,7 +359,7 @@ export default {
     this.activeTab = this.sections.length > 0 ? this.sections[0].id : null;
     window.addEventListener("scroll", this.handleScrollBtn);
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 2000) {
+      if (window.scrollY > 500) {
         this.showNav = true;
       } else {
         this.showNav = false;
