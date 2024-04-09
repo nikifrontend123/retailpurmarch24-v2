@@ -11,11 +11,7 @@ const routes = [
     name: "ProfileDetail",
     component: () => import('../components/profile/ProfileDetail.vue')
   },
-  {
-    path: "/userProfile",
-    name: "userProfile",
-    component: () => import('../components/profile/UserProfile.vue')
-  },
+  
   {
     path: "/new-address",
     name: "NewAddress",
@@ -77,6 +73,16 @@ const routes = [
     path: "/offer",
     name: "offer",
     component: () => import('../views/OfferPage.vue')
+  },
+  {
+    path: "/overview",
+    name: "overview",
+    component: () => import('../components/profile/OverviewPage.vue')
+  },
+  {
+    path: "/address",
+    name: "address",
+    component: () => import('../components/profile/AddressPage.vue')
   },
 
 

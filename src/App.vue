@@ -53,6 +53,9 @@ export default {
         'return',
         'shop',
         'CatalogDetailPage',
+        'offer',
+        'userProfile',
+        'aboutUs'
       ];
       return hiddenPages.includes(this.$route.name);
     },
@@ -127,4 +130,10 @@ export default {
   max-height: 3em;
   overflow: hidden;
 }
+.text-style {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 </style>

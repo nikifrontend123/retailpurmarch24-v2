@@ -1,121 +1,94 @@
 <template>
-    <!-- <RetailpurTopNav></RetailpurTopNav> -->
     <div class=" ">
-        <div class="d-flex justify-content-start p-2 bg-light ">
-            <i @click="goBack()" class="bi bi-chevron-left fs-5"></i>
-        </div>
-        <div class="  my-2">
-            <div class="scroll-fixed    bg-white py-3" :class="{ 'fixed-top': isFixed }" >
-                <div class="bg-white" >
-                    <div
-                        class="  d-flex justify-content-between align-items-startw mx-2 rounded-top-2  p-2 border bg-white">
-                        <div class="d-flex bg-white">
-                            <img :src="profile" class="rounded-circle border" style="width:80px ; height: 80px;" alt="">
-                            <div class="ps-3">
-                                <strong class="fs-4">Nikhil</strong>
-                                <p class="mb-1 text-danger">View activity <i class="bi bi-chevron-right"></i></p>
-                                <!-- <p class="mb-1">nkhil777@gmail.com</p>
-                    <p class="mb-1">8952635214</p> -->
-                            </div>
-                        </div>
-                        <RouterLink to="/userProfile">
-                            <i class="bi bi-pen"></i>
-                        </RouterLink>
+        <!-- <div class="d-flex justify-content-between p-2 bg-light">
+            <i @click="goBack()" class="bi bi-arrow-left fs-5"></i>
+            <strong>Dashboard</strong>
+            <span></span>
+        </div> -->
+        <div class="mb-2">
+            <div class="  ">
+                <div class="bg-white pb-3">
+                    <div :class="{ 'fixed-navbar': isFixed }">
+                        <ProfileNavbar :isFixed="isFixed">
+                            <RouterLink to="/basicInfo" class="text-decoration-none text-dark">
+                                <i class="bi bi-chevron-right fs-5 me-2"></i>
+                            </RouterLink>
+                        </ProfileNavbar>
                     </div>
-                    <div class="bg-dark mx-2 rounded-bottom-2 p-2 border">
+                    <!-- <div class="bg-dark mt-4 m-2 rounded-2 p-2  border">
                         <RouterLink to='/offer'
                             class="text-decoration-none text-warning  d-flex justify-content-between align-items-center">
-                            <span><i class="bi bi-heart pe-2"></i> Join Retailpur Gold</span>
-                            <i class="bi bi-bi bi-chevron-right"></i>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-shield-fill fs-1 pe-2"></i>
+                                <span class="fw-bold fs-5">Gold Member</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <small class="">Upgrade</small>
+                                <i class="bi bi-bi bi-chevron-right fs-4"></i>
+                            </div>
                         </RouterLink>
-                    </div>
+                    </div> -->
                 </div>
             </div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Leads</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Queries</button>
+                </li>
 
-            <div>
-                <div class="border-bottom py-4 mb-5">
-                    <router-link :to="link.path" class=" text-decoration-none text-dark"
-                        v-for="(link, index) in userLinks" :key="index">
-                        <div class="btn btn-light d-flex justify-content-between align-items-center m-3 border">
-                            <div class="p-2">
-                                <i class="bi fs-3" :class="link.icon"></i>
-                                <span class="ms-3 fs-5">{{ link.name }} </span>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                    tabindex="0">
+                   <OrderPage></OrderPage>
+                </div>
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                    tabindex="0">
+                        <div class="d-flex justify-content-center">
+                            <div class="row border-bottom py-4 mb-5 container">
+                                <router-link :to="link.path" class=" text-decoration-none text-dark col-4 mb-2"
+                                    v-for="(link, index) in userLinks" :key="index">
+                                    <div class="btn btn-light d-flex justify-content-center align-items-center border">
+                                        <div class="p-2 d-flex flex-column">
+                                            <i class="bi fs-4" :class="link.icon"></i>
+                                            <small>{{ link.name }} </small>
+                                        </div>
+                                    </div>
+                                </router-link>
                             </div>
                         </div>
-                    </router-link>
                 </div>
 
-                <router-link :to="link.path" class=" text-decoration-none text-dark" v-for="(link, index) in links"
-                    :key="index">
-                    <div class="btn btn-light d-flex justify-content-between align-items-center m-3 border">
-                        <div class="p-2">
-                            <i class="bi fs-3" :class="link.icon"></i>
-                            <span class="ms-3 fs-5">{{ link.name }} </span>
-                        </div>
-                    </div>
-                </router-link>
-            </div>
-            <div class="py-3 border-top mt-5">
-                <span class="d-flex align-items-center m-3" type="button" data-bs-toggle="modal"
-                    data-bs-target="#languageModal">
-                    <button class="btn btn-dark w-100 py-3 fs-5">
-                        <i class="bi bi-globe fs-5 mx-2 text-white" style="color: var(--secondary-color);"></i>
-                        {{ getSelectedLanguageName(selectedLanguage) }}
-                    </button>
-                </span>
-                <div class="m-3">
-                    <button class="btn btn-danger rounded w-100 py-3 fs-5" @click="logOut()">
-                        <i class="bi bi-box-arrow-right fs-5 mx-2 text-white"
-                            style="color: var(--secondary-color);"></i>
-                        Log Out
-                    </button>
-                </div>
             </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="languageModalLabel">Select Language</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Search language"
-                                    v-model="searchLanguage">
-                            </div>
-                            <div class="language-list">
-                                <div v-for="language in filteredLanguages" :key="language.code" class="language-item"
-                                    @click="selectLanguage(language)">
-                                    <span :class="{ 'selected': selectedLanguage === language.code }">{{ language.name
-                                        }}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <!-- <button type="button" class="btn btn-primary" @click="setLanguage">Save changes</button> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
         </div>
+        <RouterLink to='/aboutUs'>
+            <div class="scroll-button border rounded-circle"
+                style="opacity: 60%; background-color: #000000; color: #ffffff">
+                <i class="d-flex justify-content-center align-items-center bi bi-plus-lg"></i>
+            </div>
+        </Routerlink>
     </div>
 </template>
 
 <script>
-// import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
+import ProfileNavbar from '@/components/navbar/ProfileNavbar.vue'
+import OrderPage from '@/views/OrderPage.vue'
 export default {
     components: {
-        // RetailpurTopNav
+        ProfileNavbar,OrderPage
     },
     name: 'MyAccount',
     data() {
         return {
             isFixed: false,
-            profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_aNRVLwfw1U28A7a4uf57VPdpzlHNA4WARw&usqp=CAU',
             userLinks: [
                 {
                     icon: 'bi-bookmark-star',
@@ -134,59 +107,26 @@ export default {
                 },
             ],
             links: [
-                {
-                    icon: 'bi-person',
-                    name: 'Profile Setup',
-                    path: '/basicInfo',
-                },
-                {
-                    icon: 'bi-person',
-                    name: 'Profile Branding',
-                    path: '/brand',
-                },
-                {
-                    icon: 'bi-person',
-                    name: 'Manage',
-                    path: '/manage',
-                },
-                {
-                    icon: 'bi-person',
-                    name: 'promoters',
-                    path: '/promoters',
-                },
-                {
-                    icon: 'bi-person',
-                    name: 'Create',
-                    path: '/aboutUs',
-                },
+
+                // {
+                //     icon: 'bi-person',
+                //     name: 'Promoters',
+                //     path: '/promoters',
+                // },
+                // {
+                //     icon: 'bi-person',
+                //     name: 'Create',
+                //     path: '/aboutUs',
+                // },
                 {
                     icon: 'bi-person',
                     name: 'Order',
                     path: '/order',
                 },
 
-                {
-                    icon: 'bi bi-person ',
-                    name: 'Login',
-                    path: '/login-page'
-                },
+
             ],
-            searchLanguage: '',
-            selectedLanguage: 'en',
-            languages: [
-                { code: 'en', name: 'English' },
-                { code: 'hi', name: 'Hindi' },
-                { code: 'fr', name: 'French' },
-                { code: 'es', name: 'Spanish' },
-                { code: 'de', name: 'Deutsch' },
-                { code: 'ja', name: '日本語' },
-                { code: 'ru', name: 'Русский' },
-                { code: 'th', name: 'ภาษาไทย' },
-                { code: 'tr', name: 'Türkçe' },
-                { code: 'vi', name: 'Tiếng Việt' },
-                { code: 'zh-cn', name: '中文(简体)' },
-                { code: 'zh-tw', name: '中文(繁體)' },
-            ]
+
         }
     },
     mounted() {
@@ -197,11 +137,7 @@ export default {
         window.removeEventListener('scroll', this.handleScroll);
     },
     computed: {
-        filteredLanguages() {
-            return this.languages.filter(language => {
-                return language.name.toLowerCase().includes(this.searchLanguage.toLowerCase());
-            });
-        },
+
         user() {
             return this.$store.getters['LoggedInUserStore/getUserDetail']
         }
@@ -210,24 +146,12 @@ export default {
         logOut() {
             this.$store.dispatch('LoggedInUserStore/logout')
         },
-        selectLanguage(language) {
-            this.selectedLanguage = language.code;
-        },
-        getSelectedLanguageName(code) {
-            const selectedLanguage = this.languages.find(language => language.code === code);
-            return selectedLanguage ? selectedLanguage.name : '';
-        },
         goBack() {
             window.history.back();
         },
         handleScroll() {
-            // Get the scroll position
             const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-            // Define the threshold for fixing the section
-            const threshold = 200; // Adjust this value as needed
-
-            // Update isFixed based on the scroll position
+            const threshold = 50;
             this.isFixed = scrollPosition >= threshold;
         }
     }
@@ -235,30 +159,25 @@ export default {
 </script>
 
 <style scoped>
-.language-list {
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.language-item {
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-.language-item:hover {
-    background-color: #f5f5f5;
-}
-
-.selected {
-    font-weight: bold;
-}
-
-.fixed-top {
+.fixed-navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    /* adjust z-index as needed */
+    background-color: white;
+    /* or any other background color you want */
+}
+
+.scroll-button {
+    z-index: 9;
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 </style>

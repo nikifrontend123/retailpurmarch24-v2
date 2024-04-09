@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
+// import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
 export default {
     components: {
-        RetailpurTopNav
+        // RetailpurTopNav
     },
     data() {
         return {

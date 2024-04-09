@@ -1,15 +1,15 @@
 <template>
   <RetailpurTopNav></RetailpurTopNav>
   <div>
-    <div class="border py-5"
-      style="background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); width: 100%;">
+    <div class="  py-5"
+      style="background:linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,180,100,1) 60%, rgba(255,145,0,1) 100%)">
       <div class="d-md-flex d-none justify-content-evenly align-items-center w-100 mt-5">
         <!-- <img src="/img/girl.png" width="350"> -->
         <div class="d-flex align-items-center">
           <TextStyle></TextStyle>
         </div>
       </div>
-      <div class="d-md-none d-flex flex-column justify-content-center align-items-center w-100">
+      <div style="bottom: 30px;" class="position-relative d-md-none d-flex flex-column justify-content-center align-items-center w-100">
         <!-- <img src="/img/girl.png" width="250"> -->
         <div class="d-flex align-items-center" style="font-size: 20px !important;">
           <TextStyle></TextStyle>

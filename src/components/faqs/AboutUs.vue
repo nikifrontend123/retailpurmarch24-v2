@@ -1,6 +1,9 @@
 <template>
     <div>
-        <RetailpurTopNav></RetailpurTopNav>
+        <ProfileNav></ProfileNav>
+        <div class="d-flex laign-items-center bg-light p-2">
+            <i @click="goBack()" class="bi bi-chevron-left fs-4"></i><span class="ms-2 fs-4">Create</span>
+        </div>
 
         <div>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -122,11 +125,16 @@
 
 <script>
 // import TagsComp from '@/components/TagsComp.vue'
-import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
+// import ProfileNav from '@/components/navbar/ProfileNav.vue'
 export default {
     components: {
-        RetailpurTopNav,
+        // ProfileNav,
         // TagsComp
+    },
+    methods: {
+        goBack() {
+            window.history.back()
+        }
     }
 }
 </script>

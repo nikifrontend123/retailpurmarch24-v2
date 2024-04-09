@@ -32,7 +32,7 @@
                     </router-link>
                   </button>
                   <!-- Off-canvas container for item details -->
-                  <div style="height: 100%; width: 100%" class="offcanvas offcanvas-bottom  " tabindex="-1"
+                  <div style="height: 100%; width: 100%" class="offcanvas offcanvas-bottom " tabindex="-1"
                     id="itemDetailsOffCanvas" aria-labelledby="itemDetailsOffCanvasLabel"
                     :class="{ 'show': isOffCanvasOpen }">
                     <div class="offcanvas-header">
@@ -46,6 +46,28 @@
                         <div class="">
                           <p class="mb-0 fw-bold">{{ selectedItem.name }}</p>
                           <p class="mb-0"><span class="fw-bold">Price</span>{{ selectedItem.price }}</p>
+
+                          <div class="d-flex">
+                            <div class="mx-2" v-for="(color, index) in selectedItem.colors" :key="index">
+                              <label :for="'colorRadio_' + index"
+                                class="px-2 py-1 border rounded-3 d-flex align-items-center"
+                                :style="{ backgroundColor: selectedColor === color ? 'red' : 'transparent' }">
+                                <input type="radio" :id="'colorRadio_' + index" v-model="selectedColor" :value="color"
+                                  style="display: none;">
+                                {{ color }}
+                              </label>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <div v-for="(size, index) in selectedItem.sizes" :key="index">
+                              <label :for="'sizeRadio_' + index" class="border d-flex align-items-center label-style"
+                                :style="{ backgroundColor: selectedSize === size ? 'red' : 'transparent' }">
+                                <input type="radio" :id="'sizeRadio_' + index" v-model="selectedSize" :value="size"
+                                  style="display: none;">
+                                {{ size }}
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="w-100 d-flex justify-content-between align-items-center position-fixed px-1"
@@ -80,6 +102,8 @@ export default {
   props: ['collections', 'collect', 'index'],
   data() {
     return {
+      selectedColor: null,
+      selectedSize: null,
       isOffCanvasOpen: false,
       collapsedItems: [],
       selectedItem: {},
@@ -121,5 +145,12 @@ export default {
 <style>
 .bg {
   background-color: #EFEFED;
+}
+
+.label-style {
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
 }
 </style>
