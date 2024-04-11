@@ -1,64 +1,66 @@
 <template>
   <div>
     <router-view />
-    <BottomNavbar v-if="!hide"></BottomNavbar>
+    <!-- <BottomNavbar v-if="!hide"></BottomNavbar> -->
   </div>
 </template>
 <script>
-import BottomNavbar from "./components/navbar/BottomNavbar.vue";
+// import BottomNavbar from "./components/navbar/BottomNavbar.vue";
 export default {
   components: {
-    BottomNavbar,
+    // BottomNavbar,
   },
   computed: {
-    hide() {
-      const hiddenPages = [
-        "promoters",
-        "EditProduct",
-        "productDetail",
-        "product",
-        "createProduct",
-        "createCollection",
-        "profile",
-        "ProfileDetail",
-        "ContactDetail",
-        "BusinessType",
-        "WorkTime",
-        "basicInfo",
-        "ContactForm",
-        "LandingPage",
-        "EmailVerificationPage",
-        "ForgotPasswordPage",
-        "LoginPage",
-        "OTPPage",
-        "RegistrationPage",
-        "ResetPasswordPage",
-        "CustomerService",
-        'CareInstructions',
-        'career',
-        'privacy-policy',
-        'terms',
-        'return',
-        'brand',
-        'Account',
-        'Orderfaq',
-        'Payment',
-        'Delivery',
-        'Return',
-        'Stock',
-        'CareInstructions',
-        'career',
-        'privacy-policy',
-        'terms',
-        'return',
-        'shop',
-        'CatalogDetailPage',
-        'offer',
-        'userProfile',
-        'aboutUs'
-      ];
-      return hiddenPages.includes(this.$route.name);
-    },
+    // hide() {
+    //   const hiddenPages = [
+    //     "promoters",
+    //     "EditProduct",
+    //     "productDetail",
+    //     "product",
+    //     "createProduct",
+    //     "createCollection",
+    //     "profile",
+    //     "ProfileDetail",
+    //     "ContactDetail",
+    //     "BusinessType",
+    //     "WorkTime",
+    //     "basicInfo",
+    //     "ContactForm",
+    //     "LandingPage",
+    //     "EmailVerificationPage",
+    //     "ForgotPasswordPage",
+    //     "LoginPage",
+    //     "OTPPage",
+    //     "RegistrationPage",
+    //     "ResetPasswordPage",
+    //     "CustomerService",
+    //     'CareInstructions',
+    //     'career',
+    //     'privacy-policy',
+    //     'terms',
+    //     'return',
+    //     'brand',
+    //     'Account',
+    //     'Orderfaq',
+    //     'Payment',
+    //     'Delivery',
+    //     'Return',
+    //     'Stock',
+    //     'CareInstructions',
+    //     'career',
+    //     'privacy-policy',
+    //     'terms',
+    //     'return',
+    //     'shop',
+    //     'CatalogDetailPage',
+    //     'offer',
+    //     'userProfile',
+    //     'aboutUs',
+    //     'allmarket',
+    //     'query',
+    //   ];
+    //   return hiddenPages.includes(this.$route.name);
+    // },
   },
 };
 </script>
@@ -135,5 +137,21 @@ export default {
   font-weight: 400;
   font-style: normal;
 }
+.language-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
 
+.language-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.language-item:hover {
+    background-color: #f5f5f5;
+}
+
+.selected {
+    font-weight: bold;
+}
 </style>

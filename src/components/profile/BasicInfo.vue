@@ -84,19 +84,24 @@ export default {
                 },
                 {
                     icon: 'bi-info-circle-fill',
-                    name: 'Overview',
-                    path: '/overview',
-                },
-                {
-                    icon: 'bi-info-circle-fill',
                     name: 'Addres',
                     path: '/address',
                 },
-
+                
                 {
                     icon: 'bi bi-telegram',
                     name: 'Contact Details',
                     path: '/ContactDetail'
+                },
+                {
+                    icon: 'bi-info-circle-fill',
+                    name: 'Overview',
+                    path: '/overview',
+                },
+                {
+                    icon: 'bi bi-share-fill',
+                    name: 'Social Details',
+                    path: '/social'
                 },
                 {
                     icon: 'bi bi-clock-fill',

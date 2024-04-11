@@ -1,5 +1,6 @@
 <template>
-    <RetailpurTopNav></RetailpurTopNav>
+    <ProfileNavbar></ProfileNavbar>
+    <!-- <RetailpurTopNav></RetailpurTopNav> -->
     <div class="" style="padding-bottom:80px">
         <div v-if="wishlists.length === 0"
             class="bg-light w-100 d-flex flex-column justify-content-center align-items-center"
@@ -32,7 +33,8 @@
 </template>
 
 <script>
-import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
+// import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
+import ProfileNavbar from '@/components/navbar/ProfileNavbar.vue'
 import router from '../router';
 
 export default {
@@ -68,7 +70,8 @@ export default {
         this.initializeSelectedImages();
     },
     components: {
-        RetailpurTopNav,
+        // RetailpurTopNav,
+        ProfileNavbar,
     },
 };
 </script>

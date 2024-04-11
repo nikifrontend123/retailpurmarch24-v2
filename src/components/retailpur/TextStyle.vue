@@ -72,6 +72,7 @@ export default {
         font-weight: 500;
 
         span.typed-text {
+            // color: #fff;
             color: #d25b4b;
         }
 
@@ -79,6 +80,7 @@ export default {
             display: inline-block;
             margin-left: 3px;
             width: 4px;
+            // background-color: #fff;
             background-color: #d25b4b;
             animation: cursorBlink 1s infinite;
         }

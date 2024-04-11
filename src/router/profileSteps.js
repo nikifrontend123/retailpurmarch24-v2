@@ -28,6 +28,11 @@ const routes = [
     name: "ContactDetail",
     component: () => import('../components/profile/ContactDetail.vue')
   },
+  {
+    path: "/social",
+    name: "SocialDetail",
+    component: () => import('../components/profile/SocialDetail.vue')
+  },
 
   {
     path: "/BusinessType",

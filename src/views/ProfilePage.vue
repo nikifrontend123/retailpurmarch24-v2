@@ -9,13 +9,9 @@
             <div class="  ">
                 <div class="bg-white pb-3">
                     <div :class="{ 'fixed-navbar': isFixed }">
-                        <ProfileNavbar :isFixed="isFixed">
-                            <RouterLink to="/basicInfo" class="text-decoration-none text-dark">
-                                <i class="bi bi-chevron-right fs-5 me-2"></i>
-                            </RouterLink>
-                        </ProfileNavbar>
+                        <ProfileNavbar :isFixed="isFixed"></ProfileNavbar>
                     </div>
-                    <!-- <div class="bg-dark mt-4 m-2 rounded-2 p-2  border">
+                    <div class="bg-dark mt-4 m-2 rounded-2 p-2  border">
                         <RouterLink to='/offer'
                             class="text-decoration-none text-warning  d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center">
@@ -27,63 +23,86 @@
                                 <i class="bi bi-bi bi-chevron-right fs-4"></i>
                             </div>
                         </RouterLink>
-                    </div> -->
+                    </div>
                 </div>
             </div>
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Leads</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Queries</button>
-                </li>
 
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                    tabindex="0">
-                   <OrderPage></OrderPage>
-                </div>
-                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                    tabindex="0">
-                        <div class="d-flex justify-content-center">
-                            <div class="row border-bottom py-4 mb-5 container">
-                                <router-link :to="link.path" class=" text-decoration-none text-dark col-4 mb-2"
-                                    v-for="(link, index) in userLinks" :key="index">
-                                    <div class="btn btn-light d-flex justify-content-center align-items-center border">
-                                        <div class="p-2 d-flex flex-column">
-                                            <i class="bi fs-4" :class="link.icon"></i>
-                                            <small>{{ link.name }} </small>
-                                        </div>
-                                    </div>
-                                </router-link>
+            <div class="d-flex justify-content-center">
+                <div class="row border-bottom py-4 mb-5 container">
+                    <router-link :to="link.path" class=" text-decoration-none text-dark col-4 mb-2"
+                        v-for="(link, index) in userLinks" :key="index">
+                        <div class="btn btn-light d-flex justify-content-center align-items-center border">
+                            <div class="p-2 d-flex flex-column">
+                                <i class="bi fs-4" :class="link.icon"></i>
+                                <small>{{ link.name }} </small>
                             </div>
                         </div>
+                    </router-link>
                 </div>
-
+            </div>
+            <div class="d-flex justify-content-between py-3 border-top mt-5 container">
+                <span class="d-flex align-items-center  w-100 mx-1" type="button" data-bs-toggle="modal"
+                    data-bs-target="#languageModal">
+                    <button class="btn btn-outline-dark w-100   fs-5">
+                        <i class="bi bi-globe fs-5 mx-2" style="color: var(--secondary-color);"></i>
+                        {{ getSelectedLanguageName(selectedLanguage) }}
+                    </button>
+                </span>
+                <div class="w-100  mx-1">
+                    <button class="btn btn-outline-danger rounded w-100   fs-5" @click="logOut()">
+                        <i class="bi bi-box-arrow-right fs-5 mx-2"></i>
+                        Log Out
+                    </button>
+                </div>
             </div>
 
-
+            <!-- Modal -->
+            <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="languageModalLabel">Select Language</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Search language"
+                                    v-model="searchLanguage">
+                            </div>
+                            <div class="language-list">
+                                <div v-for="language in filteredLanguages" :key="language.code" class="language-item"
+                                    @click="selectLanguage(language)">
+                                    <span :class="{ 'selected': selectedLanguage === language.code }">{{
+                                        language.name
+                                    }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary" @click="setLanguage">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
-        <RouterLink to='/aboutUs'>
+        <!-- <RouterLink to='/aboutUs'>
             <div class="scroll-button border rounded-circle"
                 style="opacity: 60%; background-color: #000000; color: #ffffff">
                 <i class="d-flex justify-content-center align-items-center bi bi-plus-lg"></i>
             </div>
-        </Routerlink>
+        </Routerlink> -->
     </div>
 </template>
 
 <script>
 import ProfileNavbar from '@/components/navbar/ProfileNavbar.vue'
-import OrderPage from '@/views/OrderPage.vue'
 export default {
     components: {
-        ProfileNavbar,OrderPage
+        ProfileNavbar,
     },
     name: 'MyAccount',
     data() {
@@ -91,9 +110,19 @@ export default {
             isFixed: false,
             userLinks: [
                 {
-                    icon: 'bi-bookmark-star',
-                    name: 'Favourite',
-                    path: '/favourite-catalogs',
+                    icon: 'bi-person',
+                    name: 'Profile',
+                    path: '/ProfileDetail',
+                },
+                {
+                    icon: 'bi-geo-alt',
+                    name: 'Address',
+                    path: '/address',
+                },
+                {
+                    icon: 'bi-telephone',
+                    name: 'Contact',
+                    path: '/ContactDetail',
                 },
                 {
                     icon: 'bi-heart',
@@ -101,31 +130,27 @@ export default {
                     path: '/wishlist',
                 },
                 {
-                    icon: 'bi-cart',
+                    icon: 'bi-bag-check',
                     name: 'Queries',
-                    path: '/order',
+                    path: '/query',
                 },
             ],
-            links: [
-
-                // {
-                //     icon: 'bi-person',
-                //     name: 'Promoters',
-                //     path: '/promoters',
-                // },
-                // {
-                //     icon: 'bi-person',
-                //     name: 'Create',
-                //     path: '/aboutUs',
-                // },
-                {
-                    icon: 'bi-person',
-                    name: 'Order',
-                    path: '/order',
-                },
-
-
-            ],
+            searchLanguage: '',
+            selectedLanguage: 'en',
+            languages: [
+                { code: 'en', name: 'English' },
+                { code: 'hi', name: 'Hindi' },
+                { code: 'fr', name: 'French' },
+                { code: 'es', name: 'Spanish' },
+                { code: 'de', name: 'Deutsch' },
+                { code: 'ja', name: '日本語' },
+                { code: 'ru', name: 'Русский' },
+                { code: 'th', name: 'ภาษาไทย' },
+                { code: 'tr', name: 'Türkçe' },
+                { code: 'vi', name: 'Tiếng Việt' },
+                { code: 'zh-cn', name: '中文(简体)' },
+                { code: 'zh-tw', name: '中文(繁體)' },
+            ]
 
         }
     },
@@ -137,7 +162,11 @@ export default {
         window.removeEventListener('scroll', this.handleScroll);
     },
     computed: {
-
+        filteredLanguages() {
+            return this.languages.filter(language => {
+                return language.name.toLowerCase().includes(this.searchLanguage.toLowerCase());
+            });
+        },
         user() {
             return this.$store.getters['LoggedInUserStore/getUserDetail']
         }
@@ -153,7 +182,14 @@ export default {
             const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
             const threshold = 50;
             this.isFixed = scrollPosition >= threshold;
-        }
+        },
+        selectLanguage(language) {
+            this.selectedLanguage = language.code;
+        },
+        getSelectedLanguageName(code) {
+            const selectedLanguage = this.languages.find(language => language.code === code);
+            return selectedLanguage ? selectedLanguage.name : '';
+        },
     }
 }
 </script>

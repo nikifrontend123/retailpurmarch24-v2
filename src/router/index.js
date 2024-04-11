@@ -22,8 +22,13 @@ const routes = [
   },
   {
     path: "/order",
-    name: "order",
+    name: "leads",
     component: () => import("../views/OrderPage.vue"),
+  },
+  {
+    path: "/query",
+    name: "query",
+    component: () => import("../views/QueriesPage.vue"),
   },
   {
     path: "/orderDetail/:orderId",

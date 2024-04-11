@@ -17,11 +17,11 @@
         <div class="container px-4 mt-3">
           <div class="row row-cols-3 row-cols-md-6 g-1">
             <div class="col" v-for="(first, key) in collect.one" :key="key">
-              <div class="">
+              <div class="position-relative">
                 <img :src="first.img" alt=""
                   style="object-position: top; object-fit: cover; width: 100%; height: 150px;">
-                <div class="d-flex justify-content-center w-100 bg-danger " style="font-size: 10px;">
-                  <p class='text-white mb-0'>₹{{ first.price }}</p>
+                <div class="position-absolute top-0 start-0 m-2 ms-0" style="font-size: 12px;">
+                  <span class='text-white bg-danger px-1 rounded-end-3'>₹{{ first.price }}</span>
                 </div>
                 <div class="btn-group d-flex justify-content-center" role="group" aria-label="Basic example">
                   <button style="font-size: 10px;" class="rounded-0 btn btn-dark"
@@ -32,7 +32,7 @@
                     </router-link>
                   </button>
                   <!-- Off-canvas container for item details -->
-                  <div style="height: 100%; width: 100%" class="offcanvas offcanvas-bottom " tabindex="-1"
+                  <div style="height: 50%; width: 100%" class="offcanvas offcanvas-bottom " tabindex="-1"
                     id="itemDetailsOffCanvas" aria-labelledby="itemDetailsOffCanvasLabel"
                     :class="{ 'show': isOffCanvasOpen }">
                     <div class="offcanvas-header">
@@ -133,11 +133,17 @@ export default {
     openOffCanvas(item) {
       this.selectedItem = item;
       this.isOffCanvasOpen = true;
+      this.disableBodyScroll();
     },
     closeOffCanvas() {
       this.isOffCanvasOpen = false;
+    },
+    disableBodyScroll() {
+      document.body.classList.add('offcanvas-open');
+    },
+    enableBodyScroll() {
+      document.body.classList.remove('offcanvas-open');
     }
-
   }
 };
 </script>
@@ -152,5 +158,8 @@ export default {
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
+}
+.offcanvas-open {
+  overflow: hidden;
 }
 </style>

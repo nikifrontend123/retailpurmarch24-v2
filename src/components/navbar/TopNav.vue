@@ -29,11 +29,13 @@
                 </div>
             </div>
             <div class="  d -flex">
-                <i class="bi bi-search fs-4 mx-2" style="color: var(--secondary-color);"></i>
+                <!-- <i class="bi bi-search fs-4 mx-2" style="color: var(--secondary-color);"></i> -->
                 <!-- <i data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
                     class="bi bi-list fs-4 mx-2" style="color: var(--secondary-color);"></i> -->
-                <RouterLink to=/profile>
-                    <i class="bi bi-person fs-4 mx-2" style="color: var(--secondary-color);"></i>
+                <RouterLink to=/profile >
+                <div class="rounded-circle border d-flex justify-content-center align-items-center p-2">
+                    <img src="/img/mysteryMan.png" width="25" alt="">
+                </div>
                 </RouterLink>
             </div>
         </div>

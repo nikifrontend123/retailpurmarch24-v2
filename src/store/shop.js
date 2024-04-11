@@ -60,6 +60,20 @@ export default {
             },
             {
                 id: 5,
+                img: 'img/users/2.png',
+                name: 'Kanye',
+                post: 'Business Owner',
+                businessName: 'Fashion Apparels Fashion Apparels',
+                support: 100,
+                business: {
+                    shopName: 'Being human',
+                    logo: 'https://i.pinimg.com/736x/51/31/29/51312900af793b8e1be37529a13f43f6.jpg',
+                    img: 'https://i.pinimg.com/736x/e4/86/c5/e486c500d7fd46609045aba1dea45efd.jpg',
+                    description: 'Ab soluta quis nihil adipisci voluptate impedit placeat aperiam doloremque quasi voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+                }
+            },
+            {
+                id: 6,
                 img: 'img/users/6.png',
                 name: 'Drake',
                 post: 'Business Owner',

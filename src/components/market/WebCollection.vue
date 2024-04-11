@@ -26,10 +26,10 @@
                   <img :src="first.img" alt="" style="width: 100%;">
                 </div>
               </router-link>
-              <div class="d-flex justify-content-between" style="font-size: 10px;">
+              <!-- <div class="d-flex justify-content-between" style="font-size: 10px;">
                 <p>₹{{ first.price }}</p>
                 <p>{{ first.moq }}MOQ</p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 <template>
-    <RetailpurTopNav></RetailpurTopNav>
+    <!-- <RetailpurTopNav></RetailpurTopNav> -->
+    <ProfileNavbar></ProfileNavbar>
     <div class="" style="padding-bottom:80px">
         <div v-if="savedShops.length === 0"
             class="bg-light w-100 d-flex flex-column justify-content-center align-items-center"
@@ -34,8 +35,8 @@
     </div>
 </template>
 <script>
-import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
-
+// import RetailpurTopNav from '@/components/navbar/RetailerpurTopNav.vue'
+import ProfileNavbar from '@/components/navbar/ProfileNavbar.vue'
 import router from '../router';
 export default {
     name: "SavedProudct",
@@ -58,7 +59,8 @@ export default {
         }
     },
     components: {
-        RetailpurTopNav,
+        // RetailpurTopNav,
+        ProfileNavbar
     },
     methods: {
         showProduct(product) {

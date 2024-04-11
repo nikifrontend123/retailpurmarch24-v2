@@ -50,6 +50,15 @@
                     <p class="mt-2" style="font-size: 12px">{{ link.label }}</p>
                 </div>
             </div>
+            <div class='d-flex justify-content-center w-100'>
+                <div v-for="(link, index) in linkss" :key="index" class="d-flex flex-column align-items-center w-100">
+                    <div class="d-flex justify-content-center  align-items-center shadow rounded-3 bg-white "
+                        style='width:40px; height: 40px ; ' @click="handleShare(link)">
+                        <i :class="link.icon"></i>
+                    </div>
+                    <p class="mt-2" style="font-size: 12px">{{ link.label }}</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -64,10 +73,16 @@ export default {
     data() {
         return {
             links: [
-                { id: 3, name: "Message", icon: "bi bi-chat fs-5", label: "Message" },
-                { id: 1, name: "Share", icon: "bi bi-share fs-5", label: "Share" },
-                { id: 2, name: "Search", icon: "bi bi-search fs-5", label: "Search" },
                 { id: 5, name: "Contact", icon: "bi bi-telephone fs-5", label: "Contact" },
+                { id: 1, name: "Share", icon: "bi bi-whatsapp fs-5", label: "Whatsapp" },
+                { id: 3, name: "Message", icon: "bi bi-chat fs-5", label: "Message" },
+                { id: 2, name: "Search", icon: "bi bi-search fs-5", label: "Search" },
+            ],
+            linkss: [
+                { id: 3, name: "Orders", icon: "bi bi-cart-check fs-5", label: "Orders" },
+                { id: 1, name: "Share", icon: "bi bi-heart fs-5", label: "Wishlist" },
+                { id: 2, name: "Search", icon: "bi bi-geo fs-5", label: "Location" },
+                { id: 5, name: "Contact", icon: "bi bi-share fs-5", label: "Share" },
             ],
         }
     },
