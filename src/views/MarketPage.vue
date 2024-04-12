@@ -223,6 +223,10 @@
 
     <!-- <WebCollection></WebCollection> -->
     <MainCollection></MainCollection>
+    
+    <p class="p-2 text-center mt-3 mb-0 bill text-style">
+      <span class="fs-5">~ Explore All RETAILER ~</span>
+    </p>
     <div class="d-flex shops-container">
       <div v-for="(item, index) in items" :key="index" class="container my-3">
         <span class="badge rounded-2 bg-dark mx-1 p-2">{{ item.name }}</span>
@@ -314,7 +318,7 @@
       </div>
     </div>
 
-    <div class="fourteen mt-4 py-5 px-2" id="btnn">
+    <div class=" mt-4 py-5 px-2" id="btnn">
       <div class="container d-md-flex justify-content-center align-items-center">
         <div class="left w-100">
           <div class="fs-3">if you have a</div>
@@ -338,11 +342,12 @@
       style="opacity: 60%; background-color: #000000; color: #ffffff">
       <i class="d-flex justify-content-center align-items-center  bi bi-arrow-up-short"></i>
     </div>
-
+    <FooterPage></FooterPage>
   </div>
 </template>
 
 <script>
+import FooterPage from "@/components/market/shop/FooterPage.vue";
 import MainCollection from "@/components/MainCollection.vue";
 // import WebCollection from "@/components/market/WebCollection.vue";
 import RetailpurTopNav from "@/components/navbar/RetailerpurTopNav.vue";
@@ -356,6 +361,7 @@ import BannerComp from "@/components/BannerComp.vue";
 export default {
   name: "HomeView",
   components: {
+    FooterPage,
     // TopNav,
     TextStyle,
     MainCollection,
@@ -524,27 +530,13 @@ export default {
         },
       ],
       items:[
-        {
-          name:'Under 10 km'
-        },
-        {
-          name:'Best Shop'
-        },
-        {
-          name:'Trending'
-        },
-        {
-          name:'Best Retailer'
-        },
-        {
-          name:'Under 10 km'
-        },
-        {
-          name:'Under 10 km'
-        },
-        {
-          name:'Under 10 km'
-        },
+        { name:'Under 10 km' },
+        { name:'Best Shop' },
+        { name:'Trending'  },
+        { name:'Best Retailer' },
+        { name:'Under 10 km' },
+        { name:'Under 10 km' },
+        { name:'Under 10 km' },
       ]
 
     };

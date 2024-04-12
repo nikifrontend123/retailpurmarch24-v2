@@ -3,7 +3,7 @@
     <div>
         <div id="section8" class="section mb-5">
            
-            <p class="p-2 text-center mb-0 bill" style=""><span class="fs-2">~ Connect ~</span> </p>
+            <p class="p-2 text-center mb-0 bill" style=""><span class="fs-2">~ Social ~</span> </p>
             <div class="container mb-5">
                 <div class="row d-flex justify-content-center ">
                     <div v-for="(contact, index) in folows" :key="index" class="col-3 col-md-1 py-2">
@@ -113,30 +113,30 @@ export default {
                     name: 'LinkedIn',
                     url: 'https://www.linkedin.com/in/yourprofile'
                 },
-                {
-                    icon: 'bi bi-telephone fs-3',
-                    name: 'Call',
-                    number: '+919999437620'
-                },
-                {
-                    icon: 'bi bi-whatsapp fs-3',
-                    name: 'Whatsapp',
-                    number: '+919999437620',
-                    message: 'Hello, I would like to inquire about'
-                },
-                {
-                    icon: 'bi bi-envelope fs-3',
-                    name: 'Mail',
-                    email: 'support@machiddle.com',
-                    subject: 'Inquiry',
-                    body: 'Hello, I would like to inquire about...'
+                // {
+                //     icon: 'bi bi-telephone fs-3',
+                //     name: 'Call',
+                //     number: '+919999437620'
+                // },
+                // {
+                //     icon: 'bi bi-whatsapp fs-3',
+                //     name: 'Whatsapp',
+                //     number: '+919999437620',
+                //     message: 'Hello, I would like to inquire about'
+                // },
+                // {
+                //     icon: 'bi bi-envelope fs-3',
+                //     name: 'Mail',
+                //     email: 'support@machiddle.com',
+                //     subject: 'Inquiry',
+                //     body: 'Hello, I would like to inquire about...'
 
-                },
-                {
-                    icon: 'bi bi-geo fs-3',
-                    name: 'Location',
-                    location: 'B-72/1, Pocket X, Okhla Phase II, Okhla Industrial Estate, New Delhi, Delhi 110020, India'
-                },
+                // },
+                // {
+                //     icon: 'bi bi-geo fs-3',
+                //     name: 'Location',
+                //     location: 'B-72/1, Pocket X, Okhla Phase II, Okhla Industrial Estate, New Delhi, Delhi 110020, India'
+                // },
             ],
             weeks: [
                 { day: 'Mon' },

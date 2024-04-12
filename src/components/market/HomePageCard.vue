@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center mt-4">You May Also Like</h1>
+  <!-- <h1 class="text-center mt-4">You May Also Like</h1> -->
   <div class="container" style="padding-top: 20px; padding-bottom: 80px">
     <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
       <div class="col" v-for="(product, index) in products" :key="index">

@@ -91,30 +91,32 @@ export default {
   text-align: center;
 }
 
-.bill>span {
+.bill > span {
   position: relative;
   display: inline-block;
-  /* color: var(--primary-color); */
 }
 
-.bill>span:before,
-.bill>span:after {
+.bill > span:before,
+.bill > span:after {
   content: "";
   position: absolute;
   top: 50%;
-  border-bottom: 2px solid black;
-  /* border-bottom: 2px solid var(--primary-color); */
-  width: 900px;
-  /* width: 591px; */
+  width: 900px; /* Adjust width as needed */
   margin: 0 20px;
 }
 
-.bill>span:before {
+.bill > span:before {
   right: 100%;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to left, black 0, transparent 10%);
+  border-image-slice: 1;
 }
 
-.bill>span:after {
+.bill > span:after {
   left: 100%;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, black 0, transparent 10%);
+  border-image-slice: 1;
 }
 
 .truncate {
@@ -132,26 +134,28 @@ export default {
   max-height: 3em;
   overflow: hidden;
 }
+
 .text-style {
   font-family: "Madimi One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .language-list {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .language-item {
-    padding: 8px 12px;
-    cursor: pointer;
+  padding: 8px 12px;
+  cursor: pointer;
 }
 
 .language-item:hover {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
 .selected {
-    font-weight: bold;
+  font-weight: bold;
 }
 </style>

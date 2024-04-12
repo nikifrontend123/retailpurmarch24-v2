@@ -18,19 +18,19 @@
           <div class="row row-cols-3 row-cols-md-6 g-1">
             <div class="col" v-for="(first, key) in collect.one" :key="key">
               <div class="position-relative">
-                <img :src="first.img" alt=""
+                <img @click="openOffCanvas(first)" :src="first.img" alt=""
                   style="object-position: top; object-fit: cover; width: 100%; height: 150px;">
                 <div class="position-absolute top-0 start-0 m-2 ms-0" style="font-size: 12px;">
                   <span class='text-white bg-danger px-1 rounded-end-3'>₹{{ first.price }}</span>
                 </div>
                 <div class="btn-group d-flex justify-content-center" role="group" aria-label="Basic example">
-                  <button style="font-size: 10px;" class="rounded-0 btn btn-dark"
-                    @click="openOffCanvas(first)">Order</button>
-                  <button style="font-size: 10px;" class="rounded-0 btn btn-dark">
+                  <!-- <button style="font-size: 10px;" class="rounded-0 btn btn-dark"
+                    @click="openOffCanvas(first)">Order</button> -->
+                  <!-- <button style="font-size: 10px;" class="rounded-0 btn btn-dark">
                     <router-link :to="'/catalog-page/' + first.id" class="text-decoration-none text-white">
                       <span>Details</span>
                     </router-link>
-                  </button>
+                  </button> -->
                   <!-- Off-canvas container for item details -->
                   <div style="height: 50%; width: 100%" class="offcanvas offcanvas-bottom " tabindex="-1"
                     id="itemDetailsOffCanvas" aria-labelledby="itemDetailsOffCanvasLabel"
@@ -69,6 +69,13 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="container">
+                        <button style="font-size: 10px;" class="rounded-0 btn btn-dark w-100">
+                          <router-link :to="'/catalog-page/' + first.id" class="text-decoration-none text-white">
+                            <span>Details</span>
+                          </router-link>
+                        </button>
                       </div>
                       <div class="w-100 d-flex justify-content-between align-items-center position-fixed px-1"
                         style="height: 63px; bottom: 0; background: #f6f6f6; z-index: 20 !important">
@@ -159,6 +166,7 @@ export default {
   margin: 5px;
   border-radius: 5px;
 }
+
 .offcanvas-open {
   overflow: hidden;
 }

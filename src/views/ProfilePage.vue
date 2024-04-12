@@ -5,28 +5,14 @@
             <strong>Dashboard</strong>
             <span></span>
         </div> -->
-        <div class="mb-2">
-            <div class="  ">
+        <div class="">
                 <div class="bg-white pb-3">
                     <div :class="{ 'fixed-navbar': isFixed }">
                         <ProfileNavbar :isFixed="isFixed"></ProfileNavbar>
                     </div>
-                    <div class="bg-dark mt-4 m-2 rounded-2 p-2  border">
-                        <RouterLink to='/offer'
-                            class="text-decoration-none text-warning  d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-shield-fill fs-1 pe-2"></i>
-                                <span class="fw-bold fs-5">Gold Member</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <small class="">Upgrade</small>
-                                <i class="bi bi-bi bi-chevron-right fs-4"></i>
-                            </div>
-                        </RouterLink>
-                    </div>
+                  
                 </div>
-            </div>
-
+             
             <div class="d-flex justify-content-center">
                 <div class="row border-bottom py-4 mb-5 container">
                     <router-link :to="link.path" class=" text-decoration-none text-dark col-4 mb-2"
@@ -40,7 +26,7 @@
                     </router-link>
                 </div>
             </div>
-            <div class="d-flex justify-content-between py-3 border-top mt-5 container">
+            <div class="d-flex justify-content-between container">
                 <span class="d-flex align-items-center  w-100 mx-1" type="button" data-bs-toggle="modal"
                     data-bs-target="#languageModal">
                     <button class="btn btn-outline-dark w-100   fs-5">
@@ -89,6 +75,19 @@
 
 
         </div>
+        <div class="bg-dark mt-4 m-2 rounded-2 p-2  border">
+                        <RouterLink to='/offer'
+                            class="text-decoration-none text-warning  d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-shield-fill fs-1 pe-2"></i>
+                                <span class="fw-bold fs-5">Gold Member</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <small class="">Upgrade</small>
+                                <i class="bi bi-bi bi-chevron-right fs-4"></i>
+                            </div>
+                        </RouterLink>
+                    </div>
         <!-- <RouterLink to='/aboutUs'>
             <div class="scroll-button border rounded-circle"
                 style="opacity: 60%; background-color: #000000; color: #ffffff">

@@ -184,6 +184,12 @@ export default {
                         price: 250,
                     },
                 ],
+                business: {
+                    shopName: 'Being human',
+                    logo: 'https://i.pinimg.com/736x/51/31/29/51312900af793b8e1be37529a13f43f6.jpg',
+                    img: 'https://i.pinimg.com/736x/e4/86/c5/e486c500d7fd46609045aba1dea45efd.jpg',
+                    description: 'Ab soluta quis nihil adipisci voluptate impedit placeat aperiam doloremque quasi voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+                }
             },
             {
                 id: 4,
@@ -225,6 +231,12 @@ export default {
                         price: 730,
                     },
                 ],
+                business: {
+                    shopName: 'Being human',
+                    logo: 'https://i.pinimg.com/736x/51/31/29/51312900af793b8e1be37529a13f43f6.jpg',
+                    img: 'https://i.pinimg.com/736x/e4/86/c5/e486c500d7fd46609045aba1dea45efd.jpg',
+                    description: 'Ab soluta quis nihil adipisci voluptate impedit placeat aperiam doloremque quasi voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+                }
             },
             {
                 id: 5,
@@ -264,6 +276,12 @@ export default {
                         price: 324,
                     },
                 ],
+                business: {
+                    shopName: 'Being human',
+                    logo: 'https://i.pinimg.com/736x/51/31/29/51312900af793b8e1be37529a13f43f6.jpg',
+                    img: 'https://i.pinimg.com/736x/e4/86/c5/e486c500d7fd46609045aba1dea45efd.jpg',
+                    description: 'Ab soluta quis nihil adipisci voluptate impedit placeat aperiam doloremque quasi voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+                }
             },
             {
                 id: 6,
@@ -305,6 +323,12 @@ export default {
                         price: 282,
                     },
                 ],
+                business: {
+                    shopName: 'Being human',
+                    logo: 'https://i.pinimg.com/736x/51/31/29/51312900af793b8e1be37529a13f43f6.jpg',
+                    img: 'https://i.pinimg.com/736x/e4/86/c5/e486c500d7fd46609045aba1dea45efd.jpg',
+                    description: 'Ab soluta quis nihil adipisci voluptate impedit placeat aperiam doloremque quasi voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+                }
             },
         ],
         activeProduct: {},

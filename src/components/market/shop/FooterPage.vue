@@ -1,36 +1,36 @@
 <template>
-    <div class="pt-3" style="color: var(--primary-color); background-color: var(--secondary-color);">
+    <div class="pt-3" style="  background-color: #FFFBAC;">
         <div class="d-md-flex flex-column-sm justify-content-evenly py-4 px-3  ">
             <div class="mb-3 text-center">
                 <router-link to="/">
                     <!-- <img :src="`${publicPath}${img}`" style="width: 100px;object-fit: contain;"> -->
-                    <img src="https://5.imimg.com/data5/SELLER/Logo/2022/9/UM/BC/OE/72344956/hfnx-120x120.png"
+                    <img src="/img/logo/logo.png"
                         style="width: 100px;object-fit: contain;">
                 </router-link>
-                <p class="mb-2 fw-bold" style="letter-spacing: 6px">HANUMANT FASHION</p>
+                <!-- <p class="mb-2 fw-bold" style="letter-spacing: 6px">HANUMANT FASHION</p> -->
                 <p class="mb-2">Specially Crafted For Alpha Males</p>
             </div>
             <div class="d-block d-lg-flex flex-column mb-3">
                 <p class="mb-2 fw-bold">Resources</p>
-                <router-link to="/aboutUs" style="text-decoration: none; color: var(--primary-color);">
+                <router-link to="/aboutUs" class="text-dark" style="text-decoration: none;">
                     <p class="mb-2">About</p>
                 </router-link>
-                <router-link to="/customer-service" style="text-decoration: none; color: var(--primary-color);">
+                <router-link to="/customer-service" class="text-dark" style="text-decoration: none;">
                     <p class="mb-2">Support</p>
                 </router-link>
-                <router-link to="/career" style="text-decoration: none; color: var(--primary-color);">
+                <router-link to="/career" class="text-dark" style="text-decoration: none;">
                     <p class="mb-2">Career</p>
                 </router-link>
             </div>
             <div class="d-block d-lg-flex flex-column mb-3">
                 <p class="mb-2 fw-bold">Policies</p>
-                <router-link to="/privacy-policy" style="text-decoration: none; color: var(--primary-color);">
+                <router-link to="/privacy-policy" class="text-dark" style="text-decoration: none;">
                     <p class="mb-2">Privacy Policy</p>
                 </router-link>
-                <router-link to="/terms" style="text-decoration: none; color: var(--primary-color);">
+                <router-link to="/terms" class="text-dark" style="text-decoration: none;">
                     <p class="mb-2">Terms & Condition</p>
                 </router-link>
-                <router-link to="/return" style="text-decoration: none; color: var(--primary-color);">
+                <router-link to="/return" class="text-dark" style="text-decoration: none;">
                     <p class="mb-2">Return & Refun</p>
                 </router-link>
             </div>

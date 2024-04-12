@@ -141,7 +141,7 @@
         style="opacity: 60%; background-color: #000000; color: #ffffff">
         <i class="d-flex justify-content-center align-items-center bi bi-arrow-up-short"></i>
       </div>
-      <FooterPage></FooterPage>
+      <!-- <FooterPage></FooterPage> -->
     </div>
   </div>
 </template>
@@ -157,7 +157,7 @@ import SectionNavbar from "@/components/market/shop/SectionNavbar.vue";
 import CollectionPage from "@/components/market/shop/CollectionPage.vue";
 import ReviewComp from "@/components/market/shop/ReviewComp.vue";
 import BottomSec from "@/components/market/shop/BottomSec.vue";
-import FooterPage from "@/components/market/shop/FooterPage.vue";
+// import FooterPage from "@/components/market/shop/FooterPage.vue";
 export default {
   components: {
     TopNav,
@@ -170,7 +170,7 @@ export default {
     CollectionPage,
     ReviewComp,
     BottomSec,
-    FooterPage,
+    // FooterPage,
   },
   props: {
     shopName: String,
@@ -293,9 +293,9 @@ export default {
         const isSecTabVisible = rect.top < window.innerHeight && rect.bottom >= 0;
 
         if (isSecTabVisible) {
-          this.showSectionNavbar = true; // Show the SectionNavbar
+          this.showSectionNavbar = true; 
         } else {
-          this.showSectionNavbar = false; // Hide the SectionNavbar
+          this.showSectionNavbar = false;
         }
       }
     },
